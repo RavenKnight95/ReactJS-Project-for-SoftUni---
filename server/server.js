@@ -33,7 +33,8 @@
         }
     }
 
-    
+
+
     class ConflictError extends ServiceError {
         constructor(message = 'Resource conflict') {
             super(message);
