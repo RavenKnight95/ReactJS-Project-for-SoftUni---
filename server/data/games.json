@@ -22,13 +22,6 @@
         "imageUrl": "https://img.freepik.com/free-vector/joystick-game-sport-technology_138676-2045.jpg?w=2000",
         "summary": "asdasdasd",
         "_id": "daf55cd4-9aa1-4b7a-82a9-fbdb74aaa84b"
-    },
-    "18bfdb21-333b-42bd-a32c-c114263f2569": {
-        "title": "adsfasdfasd",
-        "category": "asdfasdf",
-        "maxLevel": "123",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Ultimate_MK3.png/220px-Ultimate_MK3.png",
-        "summary": "MK3",
-        "_id": "18bfdb21-333b-42bd-a32c-c114263f2569"
     }
+    
 }
