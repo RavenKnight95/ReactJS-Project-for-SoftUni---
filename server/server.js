@@ -59,6 +59,7 @@
         }
     }
 
+    
     var errors = {
         ServiceError,
         NotFoundError,
