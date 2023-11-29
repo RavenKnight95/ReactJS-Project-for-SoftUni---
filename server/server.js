@@ -59,7 +59,6 @@
         }
     }
 
-    
     var errors = {
         ServiceError,
         NotFoundError,
@@ -68,6 +67,7 @@
         AuthorizationError,
         CredentialError
     };
+
 
     const { ServiceError: ServiceError$1 } = errors;
 
