@@ -82,18 +82,18 @@ const CharacterCreate = ({ onSubmit }) => {
         <p className='remaining-points'>Remaining Points: {remainingPoints}</p>
         <div>
           <label className='attribute-name'>Attack Power: {attackPower}</label>
-          <button onClick={() => handleIncrement('attackPower')}>+</button>
-          <button onClick={() => handleDecrement('attackPower')}>-</button>
+          <button className='create-buttons' onClick={() => handleIncrement('attackPower')}>+</button>
+          <button className='create-buttons' onClick={() => handleDecrement('attackPower')}>-</button>
         </div>
         <div>
           <label className='attribute-name'>Defense Power: {defensePower}</label>
-          <button onClick={() => handleIncrement('defensePower')}>+</button>
-          <button onClick={() => handleDecrement('defensePower')}>-</button>
+          <button className='create-buttons' onClick={() => handleIncrement('defensePower')}>+</button>
+          <button className='create-buttons' onClick={() => handleDecrement('defensePower')}>-</button>
         </div>
         <div>
           <label className='attribute-name'>Dexterity: {dexterity}</label>
-          <button onClick={() => handleIncrement('dexterity')}>+</button>
-          <button onClick={() => handleDecrement('dexterity')}>-</button>
+          <button className='create-buttons' onClick={() => handleIncrement('dexterity')}>+</button>
+          <button className='create-buttons' onClick={() => handleDecrement('dexterity')}>-</button>
         </div>
         <button onClick={finalizeCharacter}>Finalize Character</button>
       </div>
