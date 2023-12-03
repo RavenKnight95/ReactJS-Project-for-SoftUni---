@@ -1,52 +1,60 @@
-import React, { useState } from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import useForm from "../../hooks/useForm";
+
+const RegisterFormKeys = {
+    Username: 'username',
+    Password: 'password',
+    ConfirmPassword: 'confirm-password'
+}
 
 const Register = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [repeatPassword, setRepeatPassword] = useState('');
-
-    const handleRegister = () => {
-        // You can add your registration logic here
-        // For simplicity, let's just log the entered username and password
-        console.log('Username:', username);
-        console.log('Password:', password);
-        console.log('Repeat Password:', repeatPassword);
-
-        // You can integrate registration logic here (e.g., API call, user creation service)
-        alert('Registration logic will be implemented here.');
-    };
+    const { registerSubmitHandler } = useContext(AuthContext);
+    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+        [RegisterFormKeys.Username]: '',
+        [RegisterFormKeys.Password]: '',
+        [RegisterFormKeys.ConfirmPassword]: '',
+    });
 
     return (
         <div>
             <h2>Register</h2>
-            <form>
+            <form onSubmit={onSubmit}>
                 <div>
                     <label>Username:</label>
                     <input
                         type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        name="username"
+                        placeholder="username"
+                        onChange={onChange}
+                        value={values[RegisterFormKeys.Email]}
                     />
                 </div>
                 <div>
                     <label>Password:</label>
                     <input
                         type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        name="password"
+                        id="register-password"
+                        onChange={onChange}
+                        values={values[RegisterFormKeys.Password]}
                     />
                 </div>
                 <div>
                     <label>Repeat Password:</label>
                     <input
                         type="password"
-                        value={repeatPassword}
-                        onChange={(e) => setRepeatPassword(e.target.value)}
+                        name="repeat-password"
+                        id="repeat-password"
+                        onChange={onChange}
+                        values={values[RegisterFormKeys.ConfirmPassword]}
                     />
                 </div>
-                <button type="button" onClick={handleRegister}>
-                    Register
-                </button>
+                <input className="btn submit" type="submit" value="Register" />
+
+                <p className="field">
+                    <span>If you already have profile click <a href="/login">here</a></span>
+                </p>
             </form>
         </div>
     );

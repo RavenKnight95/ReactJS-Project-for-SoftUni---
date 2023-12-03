@@ -1,46 +1,50 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import useForm from "../../hooks/useForm";
+import { AuthContext } from "../../contexts/AuthContext";
+
+const LoginFormKeys = {
+    Username: 'username',
+    Password: 'password',
+}
 
 const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleLogin = () => {
-        // You can add your login logic here
-        // For simplicity, let's just log the entered username and password
-        console.log('Username:', username);
-        console.log('Password:', password);
-
-        // You can integrate authentication logic here (e.g., API call, authentication service)
-        
-        alert('Login logic will be implemented here.');
-    };
-
+    const { loginSubmitHandler } = useContext(AuthContext);
+    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+        [LoginFormKeys.Username]: '',
+        [LoginFormKeys.Password]: '',
+    });
     return (
         <div>
             <h2>Login</h2>
-            <form>
+            <form onSubmit={onSubmit}>
                 <div>
                     <label>Username:</label>
                     <input
                         type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        name={LoginFormKeys.Username}
+                        onChange={onChange}
+                        value={values[LoginFormKeys.Username]}
                     />
                 </div>
                 <div>
                     <label>Password:</label>
                     <input
                         type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        name={LoginFormKeys.Password}
+                        onChange={onChange}
+                        value={values[LoginFormKeys.Password]}
                     />
                 </div>
-                <button type="button" onClick={handleLogin}>
-                    Login
-                </button>
+                <input type="submit" className="btn submit" value="Login" />
+                <p className="field">
+                    <span>If you don't have profile click <a href="/register">here</a></span>
+                </p>
             </form>
         </div>
     );
 };
+
+
+
 
 export default Login;
