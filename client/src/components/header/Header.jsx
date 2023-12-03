@@ -1,27 +1,34 @@
-import React from 'react';
+import "./Header.css"
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 
-const Header = () => {
+export default function Header() {
+    const {
+        isAuthenticated,
+        username,
+    } = useContext(AuthContext);
+
     return (
         <header>
+            <h1><Link className="home" to="/">Arena Battles</Link></h1>
             <nav>
-                <ul>
-                    <li>
-                        Character Create
-                    </li>
-                    <li>
-                        Arena
-                    </li>
-                    <li>
-                        Level Up
-                    </li>
-                    <li>
-                        Log out
-                    </li>
-                </ul>
+                
+                {/* <Link to="/games">All games</Link> */}
+                {isAuthenticated && (
+                    <div id="user">
+                        <Link to="/games/create">Create Game</Link>
+                        <Link to="/logout">Logout</Link>
+                    
+                    </div>)}
+
+                {!isAuthenticated && (<div id="guest">
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
+                </div>)}
+
             </nav>
         </header>
     );
-};
+}
 
-export default Header;
