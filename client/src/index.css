@@ -1,24 +1,20 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  
-    color-scheme: light dark;
-    
-    background-color: #242424;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-  }
-  
-  a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-  }
-  a:hover {
-    color: #535bf2;
-  }
-  
-  /* body {
+  color-scheme: light dark;
+  height: 100%;
+  background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/02721cb8-957d-4bae-b950-11016461189b/dgb4tbs-a54d3521-2535-42d6-bb97-36dfbe7496e1.jpg/v1/fill/w_1920,h_709,q_75,strp/fantasy_landscape_by_btgart_dgb4tbs-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzA5IiwicGF0aCI6IlwvZlwvMDI3MjFjYjgtOTU3ZC00YmFlLWI5NTAtMTEwMTY0NjExODliXC9kZ2I0dGJzLWE1NGQzNTIxLTI1MzUtNDJkNi1iYjk3LTM2ZGZiZTc0OTZlMS5qcGciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.fbBZw9pN7Sf9Rm5Wgly75kgCQeWzYsBHBQOk_B3KqOM");
+  background-position: center;
+  background-size: cover;
+  background-repeat: 'no-repeat';
+  background-attachment: fixed;
+
+}
+
+/* map: https://i.pinimg.com/originals/61/be/69/61be6957ebc78d70fdf349615f0b4055.jpg */
+/* body {
     margin: 0;
     display: flex;
     place-items: center;
@@ -30,36 +26,42 @@
     font-size: 3.2em;
     line-height: 1.1;
   } */
-  
+
+  h2 {
+    color: #414040;
+  }
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.4em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
   button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.4em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
+    background-color: #f9f9f9;
   }
-  button:hover {
-    border-color: #646cff;
-  }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-  
-  @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #ffffff;
-    }
-    a:hover {
-      color: #747bff;
-    }
-    button {
-      background-color: #f9f9f9;
-    }
-  }
-  
+}

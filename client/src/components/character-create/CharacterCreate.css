@@ -10,9 +10,16 @@
 .attribute-name {
     color: #000;
 }
-.remaining-points{
+.remaining-points-red{
     color: red;
 }
+.remaining-points-green{
+    color: green;
+}
+
 .create-buttons {
     margin: 0.3em 0.6em;
+}
+.finalize-button {
+   margin-top: 2em;
 }
