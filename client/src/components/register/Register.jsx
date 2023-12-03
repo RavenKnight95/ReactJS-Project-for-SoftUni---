@@ -1,17 +1,18 @@
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import AuthContext from "../../contexts/authContext";
 import useForm from "../../hooks/useForm";
 
 const RegisterFormKeys = {
-    Username: 'username',
+    Email: 'email',
     Password: 'password',
     ConfirmPassword: 'confirm-password'
 }
 
-const Register = () => {
+export default function Register() {
+
     const { registerSubmitHandler } = useContext(AuthContext);
     const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
-        [RegisterFormKeys.Username]: '',
+        [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.ConfirmPassword]: '',
     });
@@ -21,11 +22,12 @@ const Register = () => {
             <h2>Register</h2>
             <form onSubmit={onSubmit}>
                 <div>
-                    <label>Username:</label>
+                    <label>Email:</label>
                     <input
-                        type="text"
-                        name="username"
-                        placeholder="username"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="raven@mail.com"
                         onChange={onChange}
                         value={values[RegisterFormKeys.Email]}
                     />
@@ -44,8 +46,8 @@ const Register = () => {
                     <label>Repeat Password:</label>
                     <input
                         type="password"
-                        name="repeat-password"
-                        id="repeat-password"
+                        name="confirm-password"
+                        id="confirm-password"
                         onChange={onChange}
                         values={values[RegisterFormKeys.ConfirmPassword]}
                     />
@@ -59,5 +61,3 @@ const Register = () => {
         </div>
     );
 };
-
-export default Register;
