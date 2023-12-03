@@ -1,4 +1,15 @@
 .character-create {
-  border: 2px solid #fff;
-  background: url("https://w7.pngwing.com/pngs/71/946/png-transparent-brown-paper-parchment-paper-parchment-paper-kraft-paper-papel-miscellaneous-desktop-wallpaper-parchment.png")
+    width: 400px;
+    height: 400px;
+    padding-top: 4em;
+    background: url("https://media.istockphoto.com/id/182149686/photo/an-abstract-of-a-vintage-piece-of-paper.jpg?s=612x612&w=0&k=20&c=933BHVxfamtJvs_HR05HRKuxUqVE8q4nvAs1TVPdd_w=")
+}
+.h2-title {
+    color: rgb(0, 0, 0);
+}
+.attribute-name {
+    color: #000;
+}
+.remaining-points{
+    color: red;
 }

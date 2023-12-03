@@ -70,28 +70,28 @@ const CharacterCreate = ({ onSubmit }) => {
   
     return (
       <div className='character-create'>
-        <h2>Create Your Character</h2>
+        <h2 className='h2-title'>Create Your Character</h2>
         <div>
-          <label>Name:</label>
+          <label className='attribute-name'>Name:</label>
           <input
             type="text"
             value={characterName}
             onChange={(e) => setCharacterName(e.target.value)}
           />
         </div>
-        <p>Remaining Points: {remainingPoints}</p>
+        <p className='remaining-points'>Remaining Points: {remainingPoints}</p>
         <div>
-          <label>Attack Power: {attackPower}</label>
+          <label className='attribute-name'>Attack Power: {attackPower}</label>
           <button onClick={() => handleIncrement('attackPower')}>+</button>
           <button onClick={() => handleDecrement('attackPower')}>-</button>
         </div>
         <div>
-          <label>Defense Power: {defensePower}</label>
+          <label className='attribute-name'>Defense Power: {defensePower}</label>
           <button onClick={() => handleIncrement('defensePower')}>+</button>
           <button onClick={() => handleDecrement('defensePower')}>-</button>
         </div>
         <div>
-          <label>Dexterity: {dexterity}</label>
+          <label className='attribute-name'>Dexterity: {dexterity}</label>
           <button onClick={() => handleIncrement('dexterity')}>+</button>
           <button onClick={() => handleDecrement('dexterity')}>-</button>
         </div>
