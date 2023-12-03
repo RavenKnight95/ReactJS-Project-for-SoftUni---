@@ -2,7 +2,8 @@
     width: 400px;
     height: 400px;
     padding-top: 4em;
-    background: url("https://media.istockphoto.com/id/182149686/photo/an-abstract-of-a-vintage-piece-of-paper.jpg?s=612x612&w=0&k=20&c=933BHVxfamtJvs_HR05HRKuxUqVE8q4nvAs1TVPdd_w=")
+    background: url("https://media.istockphoto.com/id/182149686/photo/an-abstract-of-a-vintage-piece-of-paper.jpg?s=612x612&w=0&k=20&c=933BHVxfamtJvs_HR05HRKuxUqVE8q4nvAs1TVPdd_w=");
+    border-radius: 1em;
 }
 .h2-title {
     color: rgb(0, 0, 0);
