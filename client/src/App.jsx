@@ -6,7 +6,10 @@ import CharacterCreate from './components/character-create/CharacterCreate';
 function App() {
 
   return (
-    <CharacterCreate />
+    <>
+      <WelcomePage />
+      <CharacterCreate />
+    </>
   )
 
 }
