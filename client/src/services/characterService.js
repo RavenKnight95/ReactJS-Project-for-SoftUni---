@@ -1,30 +1,43 @@
-import * as request from "./requester";
+import * as request from "../lib/request";
 
-const baseUrl = "http://localhost:3030/data/catalog";
+const baseUrl = 'http://localhost:3030/data/characters'
 
-export const getAll = () => request.get(baseUrl);
+export const getAll = async () => {
+  const result = await request.get(baseUrl);
 
-export const getOne = (id) => request.get(`${baseUrl}/${id}`);
+  return result;
+};
 
-export const create = (characterData) => request.post(baseUrl, characterData);
+export const getOne = async (characterId) => {
+  const result = await request.get(`${baseUrl}/${characterId}`,);
 
-export const edit = (id, characterData) =>
-  request.put(`${baseUrl}/${id}`, characterData);
+  return result;
+}
 
-export const remove = (id) => request.del(`${baseUrl}/${id}`);
+export const getLatest = async () => {
+  // const query = new URLSearchParams({
+  //     sortBy: `_createdOn desc`,
+  //     offset: 0,
+  //     pageSize: 3,
+  // });
 
-export const buy = (id) => request.get(`${baseUrl}/buy/${id}`);
+  const query = encodeURIComponent(`offset=0&pageSize=3`);
+  console.log(query);
+  const result = await request.get(`${baseUrl}?sortBy=_createdOn%20desc&${query}`);
 
-export const comment = (id, comment) =>
-  request.post(`${baseUrl}/comment/${id}`, comment);
+  return result;
+}
 
-export const destroyComment = (commentInfo) =>
-  request.post(`${baseUrl}/destroy`, commentInfo);
+export const create = async (characterData) => {
+  const result = await request.post(baseUrl, characterData);
 
-export const replyToComment = (replyInfo) =>
-  request.post(`${baseUrl}/reply`, replyInfo);
+  return result;
+};
 
-export const destroyReply = (replyInfo) =>
-  request.post(`${baseUrl}/destroy-reply`, replyInfo);
+export const edit = async (characterId, characterData) => {
+  const result = await request.put(`${baseUrl}/${characterId}`, characterData);
 
-export const rate = (ratingValue) => request.post(`${baseUrl}/rate`, ratingValue)
+  return result;
+};
+
+export const remove = async (characterId) => request.remove(`${baseUrl}/${characterId}`);
