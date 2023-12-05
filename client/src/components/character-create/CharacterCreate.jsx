@@ -1,6 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import "./CharacterCreate.css"
+
+import * as characterService from '../../services/characterService'
+
 const CharacterCreate = ({ onSubmit }) => {
+  const navigate = useNavigate();
+
   const [characterName, setCharacterName] = useState('');
   const [attackPower, setAttackPower] = useState(0);
   const [defensePower, setDefensePower] = useState(0);
@@ -51,8 +57,10 @@ const CharacterCreate = ({ onSubmit }) => {
     }
   };
 
-  const finalizeCharacter = () => {
+  const finalizeCharacter = async (e) => {
+    e.preventDefault();
     // Check if all points are allocated and a name is provided before finalizing
+
     if (remainingPoints === 0 && characterName.trim() !== '') {
       const character = {
         name: characterName,
@@ -61,8 +69,17 @@ const CharacterCreate = ({ onSubmit }) => {
         dexterity,
       };
 
+      // const characterData = Object.fromEntries(new FormData(this.character));
+      console.log(character);
+      try {
+        await characterService.create(character);
+        navigate('/');
+        //TODO switch navigate from home to future component - tavern
+      } catch (err) {
+        console.log(err);
+      }
       // Submit the character to the parent component
-      onSubmit(character);
+      // onSubmit(character);
     } else {
       alert('Please provide a character name and allocate all 10 points before finalizing.');
     }
