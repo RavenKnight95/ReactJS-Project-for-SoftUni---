@@ -1,12 +1,32 @@
+body {
+    /* background: url("https://i.etsystatic.com/45437265/r/il/71de21/5160683751/il_fullxfull.5160683751_eumm.jpg"); */
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: 'no-repeat';
+    background-attachment: fixed;
+}
+
 .tavern-message {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     color: #000;
 }
+
+.tavern-message-h1 {
+    color: #fff;
+}
+
+.tavern-message-h2 {
+    color: #fff;
+}
+
 #tavern-page {
     margin-top: 5em;
     display: flex;
+    align-items: center;
     justify-content: center;
-    
+    border: 20px solid red;
+    width: auto;
     
 }

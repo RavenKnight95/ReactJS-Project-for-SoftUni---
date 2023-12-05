@@ -29,14 +29,7 @@ header {
     padding: 10px;
 }
 
-header h1 {
-    display: inline-block;
-    background-color: #29303c;
-    color: white;
-    margin-bottom: auto;
-    border-radius: 1em;
-    padding: 1em;
-}
+
 
 header nav {
     font-size: auto;
@@ -68,4 +61,11 @@ nav a:hover {
 #guest {
     margin: 0;
     padding: 0;
+}
+.home {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
 }

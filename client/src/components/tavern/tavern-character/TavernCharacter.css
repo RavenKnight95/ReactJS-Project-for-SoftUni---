@@ -57,27 +57,45 @@
 
     z-index: -1;
 }
+
+
 .allCharacters {
     display: flex;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    justify-content: space-between;
+    flex-grow: 4;
+    align-items: stretch;
     /* background: url("https://media.istockphoto.com/id/182149686/photo/an-abstract-of-a-vintage-piece-of-paper.jpg?s=612x612&w=0&k=20&c=933BHVxfamtJvs_HR05HRKuxUqVE8q4nvAs1TVPdd_w="); */
-    text-align: center;
+    /* text-align: center;
     border: 2px solid grey;
     padding: 2em;
+    box-shadow:
+        0 0 20px 5px #fff,
+        /* inner white */
+    /* 0 0 30px 30px rgb(175, 110, 31), */
+    /* middle magenta */
+    /* 0 0 10px 10px #0ff; */
+    /* outer cyan */
 }
+
 .char-name {
     background: #242424;
     border-radius: 0.3em;
     padding: 0.5em;
     color: #fff;
 }
+
 .char-attribute-attack {
     background: rgb(116, 2, 2);
     border-radius: 0.3em;
 }
+
 .char-attribute-defense {
     background: rgb(8, 8, 152);
     border-radius: 0.3em;
 }
+
 .char-attribute-dexterity {
     background: rgb(14, 66, 14);
     border-radius: 0.3em;

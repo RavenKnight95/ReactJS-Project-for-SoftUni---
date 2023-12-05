@@ -1,0 +1,85 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5em;
+}
+
+.register-form {
+    padding-top: 4em;
+    background: url("https://i.pinimg.com/originals/cc/87/95/cc8795e8b53e293fbb65a5292b4979a8.jpg");
+    background-size: cover;
+    border-radius: 2em;
+    background-color: #fff;
+    box-shadow:
+        0 0 20px 5px #fff,
+        /* inner white */
+        0 0 30px 30px rgb(175, 110, 31),
+        /* middle magenta */
+        0 0 10px 10px #0ff;
+    /* outer cyan */
+    width: 25em;
+    height: 31em;
+}
+
+.register-title {
+    color: #000;
+}
+
+.register-label {
+    color: #000;
+}
+
+.btn-submit {
+    margin-top: 1em;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.4em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.btn-submit:hover {
+    border-color: #646cff;
+}
+
+.btn-submit:focus,
+.btn-submit:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    .btn-submit {
+        background-color: #f9f9f9;
+    }
+}
+
+.field {
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2.5em;
+    width: 20em;
+    height: 10em;
+}
+.register-span {
+    font-size: 1.4em;
+    color: #000;
+}
+.register-a {
+    color: #fff; 
+}
