@@ -22,11 +22,12 @@ body {
 }
 
 #tavern-page {
-    margin-top: 5em;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 5em;
     justify-content: center;
-    border: 20px solid red;
-    width: auto;
-    
+    width: 100%;
+    height: auto;
 }

@@ -5,18 +5,15 @@
 }
 
 .character-create {
-    width: 450px;
-    height: 450px;
+    width: 20em;
+    height: 25em;
     padding-top: 0.5em;
     background: url("https://media.istockphoto.com/id/182149686/photo/an-abstract-of-a-vintage-piece-of-paper.jpg?s=612x612&w=0&k=20&c=933BHVxfamtJvs_HR05HRKuxUqVE8q4nvAs1TVPdd_w=");
     border-radius: 1em;
     text-align: center;
     box-shadow:
-        0 0 20px 5px #fff,
-        /* inner white */
-        0 0 30px 30px rgb(175, 110, 31),
-        /* middle magenta */
-        0 0 10px 10px #0ff;
+    
+        0 0 5px 5px rgb(20, 14, 1);
     /* outer cyan */
 }
 

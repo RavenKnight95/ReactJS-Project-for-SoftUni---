@@ -62,24 +62,34 @@
 .allCharacters {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: auto;
-    justify-content: space-between;
-    flex-grow: 4;
-    align-items: stretch;
+    width: 15em;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     /* background: url("https://media.istockphoto.com/id/182149686/photo/an-abstract-of-a-vintage-piece-of-paper.jpg?s=612x612&w=0&k=20&c=933BHVxfamtJvs_HR05HRKuxUqVE8q4nvAs1TVPdd_w="); */
-    /* text-align: center;
+    opacity: 0.8;
+    padding: 1em;
+    text-align: center;
     border: 2px solid grey;
-    padding: 2em;
     box-shadow:
-        0 0 20px 5px #fff,
-        /* inner white */
-    /* 0 0 30px 30px rgb(175, 110, 31), */
-    /* middle magenta */
-    /* 0 0 10px 10px #0ff; */
+        0 0 2px 2px rgb(0, 0, 0);
     /* outer cyan */
+}
+.allCharacters:hover {
+    opacity: 1;
+}
+.allCharacters-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 14em;
 }
 
 .char-name {
+    display:flex;
+    justify-content: center;
+    align-items: center;
     background: #242424;
     border-radius: 0.3em;
     padding: 0.5em;
@@ -87,16 +97,22 @@
 }
 
 .char-attribute-attack {
+    display:flex;
+    justify-content: center;
     background: rgb(116, 2, 2);
     border-radius: 0.3em;
 }
 
 .char-attribute-defense {
+    display:flex;
+    justify-content: center;
     background: rgb(8, 8, 152);
     border-radius: 0.3em;
 }
 
 .char-attribute-dexterity {
+    display:flex;
+    justify-content: center;
     background: rgb(14, 66, 14);
     border-radius: 0.3em;
 }

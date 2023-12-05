@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./CharacterCreate.css"
 
 import * as characterService from '../../services/characterService'
 
 const CharacterCreate = ({ onSubmit }) => {
   const navigate = useNavigate();
+
+  useEffect(() => { document.body.style.backgroundImage = `url(${'https://cdn1.epicgames.com/ue/product/Screenshot/bOti6pArJYU-1920x1080-fb6d0dfd6bc071c3e3f3bb5f6dae7b91.jpg?resize=1&w=1920'})` });
 
   const [characterName, setCharacterName] = useState('');
   const [attackPower, setAttackPower] = useState(0);
