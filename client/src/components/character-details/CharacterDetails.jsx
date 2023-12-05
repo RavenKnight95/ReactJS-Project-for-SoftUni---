@@ -14,15 +14,16 @@ export default function CharacterDetails() {
     useEffect(() => {
         characterService.getOne(characterId)
             .then(setCharacter);
-
+        console.log(characterId);
     }, [characterId]);
 
+
     const deleteButtonClickHandler = async () => {
-        const hasConfirmed = confirm(`Are you sure you want to delete ${character.title}`);
+        const hasConfirmed = confirm(`Are you sure you want to delete ${character.name}`);
 
         if (hasConfirmed) {
             await characterService.remove(characterId);
-
+            console.log(characterId);
             navigate('/tavern');
         }
     }
@@ -32,10 +33,10 @@ export default function CharacterDetails() {
             <h1>Character Details</h1>
             <div className="info-section">
                 <div className="character-header">
-                    <h1>{character.name}</h1>
-                    <h2>{character.attackPower}</h2>
-                    <h2>{character.defensePower}</h2>
-                    <h2>{character.dexterity}</h2>
+                    <h1>Name: {character.name}</h1>
+                    <h1>Attack Power: {character.attackPower}</h1>
+                    <h1>Defense Power: {character.defensePower}</h1>
+                    <h1>Dexterity: {character.dexterity}</h1>
                 </div>
 
                 {userId === character._ownerId && (
