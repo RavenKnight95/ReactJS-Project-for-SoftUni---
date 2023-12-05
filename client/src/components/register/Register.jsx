@@ -13,7 +13,7 @@ const RegisterFormKeys = {
 
 export default function Register() {
 
-    useEffect(() => { document.body.style.backgroundImage = `url(${'https://cdnb.artstation.com/p/assets/images/images/030/214/559/large/spas-dimitrov-mntbuvv.jpg?1599940384'})` });
+    useEffect(() => { document.body.style.backgroundImage = `url(${'https://cdna.artstation.com/p/assets/images/images/030/214/624/large/spas-dimitrov-dpimv4b.jpg?1599940598'})` });
 
 
     const { registerSubmitHandler } = useContext(AuthContext);

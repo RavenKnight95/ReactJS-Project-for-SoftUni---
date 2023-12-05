@@ -12,9 +12,9 @@
     border-radius: 2em;
     background-color: #fff;
     box-shadow:
-        0 0 20px 5px #fff,
+        0 0 100px 5px #e76060,
         /* inner white */
-        0 0 30px 30px rgb(175, 110, 31),
+        0 0 30px 30px rgb(175, 77, 31),
         /* middle magenta */
         0 0 10px 10px #0ff;
     /* outer cyan */

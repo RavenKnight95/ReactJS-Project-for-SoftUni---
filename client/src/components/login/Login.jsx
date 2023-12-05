@@ -11,7 +11,7 @@ const LoginFormKeys = {
 }
 export default function Login() {
 
-    useEffect(() => { document.body.style.backgroundImage = `url(${'https://cdnb.artstation.com/p/assets/images/images/030/214/559/large/spas-dimitrov-mntbuvv.jpg?1599940384'})` });
+    useEffect(() => { document.body.style.backgroundImage = `url(${'https://i.imgur.com/ktqRaJo.jpg'})` });
 
     const { loginSubmitHandler } = useContext(AuthContext);
     const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
