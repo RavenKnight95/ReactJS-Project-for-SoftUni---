@@ -14,9 +14,10 @@ export default function Header() {
             <Link className="home" to="/"><h1>Arena Battles</h1></Link>
             <nav>
 
-                {/* <Link to="/games">All games</Link> */}
+                
                 {isAuthenticated && (
                     <div id="user">
+                        <Link to="/tavern"><button>Tavern</button></Link>
                         <Link to="/character-create"><button>Create Character</button></Link>
                         <Link to="/logout"><button>Logout</button></Link>
 

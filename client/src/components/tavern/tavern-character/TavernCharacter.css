@@ -1,0 +1,84 @@
+@import "https://unpkg.com/open-props";
+
+
+* {
+    box-sizing: border-box;
+}
+
+.details-button {
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-5);
+    font-size: var(--font-size-4);
+    color: #fff;
+    background: linear-gradient(90deg, rgba(2, 3, 4, 5) 0%, rgb(131, 127, 127) 80%, rgba(0, 0, 0, 0.346) 100%);
+    border: 0;
+    padding: var(--size-1) var(--size-2);
+    transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
+    transition: transform 0.1s;
+    position: relative;
+    text-decoration: none;
+    border-radius: 0.3em;
+}
+
+.details-button:hover {
+    --y: -10;
+    --scale: 1.1;
+    --border-scale: 1;
+}
+
+.details-button:active {
+    --y: 5%;
+    --scale: 0.9;
+    --border-scale: 0.9, 0.8;
+}
+
+.details-button:before {
+    content: "";
+    position: absolute;
+    inset: calc(var(--size-3) * -1);
+    border: var(--size-2) solid var(--gray-0);
+    transform: scale(var(--border-scale, 0));
+    transition: transform 0.125s;
+
+    --angle-one: 105deg;
+    --angle-two: 290deg;
+    --spread-one: 30deg;
+    --spread-two: 40deg;
+    --start-one: calc(var(--angle-one) - (var(--spread-one) * 0.5));
+    --start-two: calc(var(--angle-two) - (var(--spread-two) * 0.5));
+    --end-one: calc(var(--angle-one) + (var(--spread-one) * 0.5));
+    --end-two: calc(var(--angle-two) + (var(--spread-two) * 0.5));
+
+    mask: conic-gradient(transparent 0 var(--start-one),
+            rgb(210, 100, 100) var(--start-one) var(--end-one),
+            transparent var(--end-one) var(--start-two),
+            rgb(94, 53, 53) var(--start-two) var(--end-two),
+            transparent var(--end-two));
+
+    z-index: -1;
+}
+.allCharacters {
+    display: flex;
+    /* background: url("https://media.istockphoto.com/id/182149686/photo/an-abstract-of-a-vintage-piece-of-paper.jpg?s=612x612&w=0&k=20&c=933BHVxfamtJvs_HR05HRKuxUqVE8q4nvAs1TVPdd_w="); */
+    text-align: center;
+    border: 2px solid grey;
+    padding: 2em;
+}
+.char-name {
+    background: #242424;
+    border-radius: 0.3em;
+    padding: 0.5em;
+    color: #fff;
+}
+.char-attribute-attack {
+    background: rgb(116, 2, 2);
+    border-radius: 0.3em;
+}
+.char-attribute-defense {
+    background: rgb(8, 8, 152);
+    border-radius: 0.3em;
+}
+.char-attribute-dexterity {
+    background: rgb(14, 66, 14);
+    border-radius: 0.3em;
+}

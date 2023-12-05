@@ -73,47 +73,49 @@ const CharacterCreate = ({ onSubmit }) => {
       console.log(character);
       try {
         await characterService.create(character);
-        navigate('/');
+        navigate('/tavern');
         //TODO switch navigate from home to future component - tavern
       } catch (err) {
         console.log(err);
       }
       // Submit the character to the parent component
-      // onSubmit(character);
+
     } else {
       alert('Please provide a character name and allocate all 10 points before finalizing.');
     }
   };
 
   return (
-    <div className='character-create'>
-      <h2 className='h2-title'>Create Your Character</h2>
-      <div>
-        <label className='attribute-name'>Name:</label>
-        <input
-          type="text"
-          value={characterName}
-          onChange={(e) => setCharacterName(e.target.value)} />
-      </div>
-      {remainingPoints === 0 ? <p className='remaining-points-red'>Remaining Points: {remainingPoints}</p> :
-        <p className='remaining-points-green'>Remaining Points: {remainingPoints}</p>}
+    <div className="character-create-container">
+      <div className='character-create'>
+        <h2 className='h2-title'>Create Your Character</h2>
+        <div>
+          <label className='attribute-name'>Name:</label>
+          <input
+            type="text"
+            value={characterName}
+            onChange={(e) => setCharacterName(e.target.value)} />
+        </div>
+        {remainingPoints === 0 ? <p className='remaining-points-red'>Remaining Points: {remainingPoints}</p> :
+          <p className='remaining-points-green'>Remaining Points: {remainingPoints}</p>}
 
-      <div>
-        <label className='attribute-name'>Attack Power: {attackPower}</label>
-        <button className='create-buttons' onClick={() => handleIncrement('attackPower')}>+</button>
-        <button className='create-buttons' onClick={() => handleDecrement('attackPower')}>-</button>
+        <div>
+          <label className='attribute-name'>Attack Power: {attackPower}</label>
+          <button className='create-buttons' onClick={() => handleIncrement('attackPower')}>+</button>
+          <button className='create-buttons' onClick={() => handleDecrement('attackPower')}>-</button>
+        </div>
+        <div>
+          <label className='attribute-name'>Defense Power: {defensePower}</label>
+          <button className='create-buttons' onClick={() => handleIncrement('defensePower')}>+</button>
+          <button className='create-buttons' onClick={() => handleDecrement('defensePower')}>-</button>
+        </div>
+        <div>
+          <label className='attribute-name'>Dexterity: {dexterity}</label>
+          <button className='create-buttons' onClick={() => handleIncrement('dexterity')}>+</button>
+          <button className='create-buttons' onClick={() => handleDecrement('dexterity')}>-</button>
+        </div>
+        <button className='finalize-button' onClick={finalizeCharacter}>Finalize Character</button>
       </div>
-      <div>
-        <label className='attribute-name'>Defense Power: {defensePower}</label>
-        <button className='create-buttons' onClick={() => handleIncrement('defensePower')}>+</button>
-        <button className='create-buttons' onClick={() => handleDecrement('defensePower')}>-</button>
-      </div>
-      <div>
-        <label className='attribute-name'>Dexterity: {dexterity}</label>
-        <button className='create-buttons' onClick={() => handleIncrement('dexterity')}>+</button>
-        <button className='create-buttons' onClick={() => handleDecrement('dexterity')}>-</button>
-      </div>
-      <button className='finalize-button' onClick={finalizeCharacter}>Finalize Character</button>
     </div>
   );
 };

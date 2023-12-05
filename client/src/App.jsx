@@ -11,6 +11,7 @@ import Header from './components/header/Header';
 import Arena from './components/arena/Arena';
 import Logout from './components/logout/Logout';
 import ErrorBoundary from './components/ErrorBoundary';
+import Tavern from './components/tavern/Tavern';
 
 
 function App() {
@@ -23,8 +24,9 @@ function App() {
             <Route path="/" element={<WelcomePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/character-create" element={<CharacterCreate />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/character-create" element={<CharacterCreate />} />
+            <Route path="/tavern" element={<Tavern />} />
 
             <Route path="/arena" element={<Arena />} />
           </Routes>

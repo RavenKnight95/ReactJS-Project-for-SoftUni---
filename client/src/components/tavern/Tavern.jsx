@@ -1,24 +1,36 @@
-import React from 'react';
+import "./Tavern.css"
+import { useEffect, useState } from 'react';
 
-const Tavern = ({ characters }) => {
+import * as characterService from '../../services/characterService';
+import TavernCharacter from './tavern-character/TavernCharacter';
+
+export default function Tavern() {
+    const [characters, setCharacters] = useState([]);
+
+    useEffect(() => {
+        characterService.getAll()
+            .then(result => setCharacters(result))
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+
     return (
-        <div>
-            <h2>Tavern</h2>
-            <div>
-                <h3>All Characters</h3>
-                <ul>
-                    {characters.map((character) => (
-                        <li key={character.name}>
-                            <strong>Name:</strong> {character.name} |
-                            <strong> Attack Power:</strong> {character.attackPower} |
-                            <strong> Defense Power:</strong> {character.defensePower} |
-                            <strong> Dexterity:</strong> {character.dexterity}
-                        </li>
-                    ))}
-                </ul>
+        <div className="tavern-welcome">
+            <div className="tavern-message">
+                <h1>Welcome to the Tavern! </h1>
             </div>
+
+            <section id="tavern-page">
+
+                {characters.map(character => (
+                    <TavernCharacter key={character._id} {...character} />
+                ))}
+
+                {characters.length === 0 && (
+                    <h3 className="no-characters">No characters have come for a drink in the Tavern yet...</h3>
+                )}
+            </section>
         </div>
     );
-};
-
-export default Tavern;
+}
