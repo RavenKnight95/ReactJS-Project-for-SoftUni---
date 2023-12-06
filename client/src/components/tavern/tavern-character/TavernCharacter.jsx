@@ -12,12 +12,12 @@ export default function TavernCharacter({
     return (
         <div className="allCharacters">
             <div className="allCharacters-info">
-                <h2 className="char-name">Name: {name}</h2>
-                <h3 className="char-attribute-attack">Attack: {attackPower}</h3>
-                <h3 className="char-attribute-defense">Defense: {defensePower}</h3>
-                <h3 className="char-attribute-dexterity">Dexterity: {dexterity}</h3>
+                <h2 className="char-name">{name}</h2>
+                <h3 className="char-attribute-attack">Attack: Unknown</h3>
+                <h3 className="char-attribute-defense">Defense: Unknown</h3>
+                <h3 className="char-attribute-dexterity">Dexterity: Unknown</h3>
                 <div className="buttons-container">
-                    <Link to={`/characters/${_id}`} className="details-button">Details</Link>
+                    <Link to={`/characters/${_id}`} className="details-button">Check Stats</Link>
                 </div>
             </div>
         </div>

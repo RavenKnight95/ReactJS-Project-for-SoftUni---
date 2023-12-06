@@ -15,8 +15,10 @@ export default function Header() {
             <nav>
                 {isAuthenticated && (
                     <div id="user">
+                        <Link to="/arena"><button>Arena</button></Link>
                         <Link to="/tavern"><button>Tavern</button></Link>
                         <Link to="/character-create"><button>Create Character</button></Link>
+                        <Link to="/character-roster"><button>Character Roster</button></Link>
                         <Link to="/logout"><button>Logout</button></Link>
 
                     </div>)}

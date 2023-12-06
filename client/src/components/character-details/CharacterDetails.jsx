@@ -1,9 +1,10 @@
 import { useContext, useEffect, useReducer, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
+import './CharacterDetails.css'
+
 import * as characterService from '../../services/characterService';
 import AuthContext from "../../contexts/authContext";
-import { pathToUrl } from "../../utils/pathUtils";
 
 export default function CharacterDetails() {
     const navigate = useNavigate();
@@ -11,12 +12,15 @@ export default function CharacterDetails() {
     const [character, setCharacter] = useState({});
     const { characterId } = useParams();
 
+    useEffect(() => { document.body.style.backgroundImage = `url(${'https://i.etsystatic.com/45437265/r/il/71de21/5160683751/il_fullxfull.5160683751_eumm.jpg'})` })
+
     useEffect(() => {
         characterService.getOne(characterId)
             .then(setCharacter);
-        console.log(characterId);
+
     }, [characterId]);
 
+    const totalPower = (character.attackPower + character.defensePower) * character.dexterity
 
     const deleteButtonClickHandler = async () => {
         const hasConfirmed = confirm(`Are you sure you want to delete ${character.name}`);
@@ -29,23 +33,34 @@ export default function CharacterDetails() {
     }
 
     return (
-        <section id="character-details">
-            <h1>Character Details</h1>
-            <div className="info-section">
-                <div className="character-header">
-                    <h1>Name: {character.name}</h1>
-                    <h1>Attack Power: {character.attackPower}</h1>
-                    <h1>Defense Power: {character.defensePower}</h1>
-                    <h1>Dexterity: {character.dexterity}</h1>
-                </div>
+        <div className="character-details-page">
+            <section id="allCharacters">
+                <h1>Character Details</h1>
+                <div className="allCharacters-info">
+                    {userId === character._ownerId && (
+                        <div className="character-header">
+                            <h1 className="char-name">{character.name} greets you with a smile</h1>
+                            <h1 className="char-attribute-attack">Attack Power: {character.attackPower}</h1>
+                            <h1 className="char-attribute-defense">Defense Power: {character.defensePower}</h1>
+                            <h1 className="char-attribute-dexterity">Dexterity: {character.dexterity}</h1>
+                            <h1 className="char-attribute-total-power">Total Power: {totalPower}</h1>
+                            <div className="buttons">
+                                {/* <Link to={pathToUrl('/characters/:characterId/edit', { characterId })} className="button">Edit</Link> */}
+                                <button className="button" onClick={deleteButtonClickHandler}>Dismiss</button>
+                            </div>
+                        </div>
+                    )}
+                    {userId !== character._ownerId && (
+                        <div className="character-header">
+                            <p className="char-not-owned">
 
-                {userId === character._ownerId && (
-                    <div className="buttons">
-                        <Link to={pathToUrl('/characters/:characterId/edit', { characterId })} className="button">Edit</Link>
-                        <button className="button" onClick={deleteButtonClickHandler}>Delete</button>
-                    </div>
-                )}
-            </div>
-        </section>
+                                {character.name} politely asks you to walk away...
+                            </p>
+                            <Link to={('/tavern')} className="go-back-button">Go back to Tavern</Link>
+                        </div>
+                    )}
+                </div>
+            </section >
+        </div >
     );
 }
