@@ -9,6 +9,7 @@ export default function TavernCharacter({
     defensePower,
     dexterity,
 }) {
+    
     return (
         <div className="allCharacters">
             <div className="allCharacters-info">

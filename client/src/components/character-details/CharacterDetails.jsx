@@ -23,7 +23,7 @@ export default function CharacterDetails() {
     const totalPower = (character.attackPower + character.defensePower) * character.dexterity
 
     const deleteButtonClickHandler = async () => {
-        const hasConfirmed = confirm(`Are you sure you want to delete ${character.name}`);
+        const hasConfirmed = confirm(`Are you sure you want to dismiss ${character.name}`);
 
         if (hasConfirmed) {
             await characterService.remove(characterId);
