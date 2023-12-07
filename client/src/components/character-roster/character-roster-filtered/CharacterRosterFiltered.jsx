@@ -9,7 +9,7 @@ export default function CharacterRosterFiltered({
     _id,
     name,
 }) {
-
+    
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {

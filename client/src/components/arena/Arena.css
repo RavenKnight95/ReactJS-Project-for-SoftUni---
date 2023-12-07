@@ -1,0 +1,60 @@
+.background-arena-container {
+    display: flex;
+    justify-content: center;
+}
+
+.arena-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/021/972/590/original/3d-icon-illustration-wooden-shield-png.png');
+    width: 50em;
+    height: 50em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.arena-title {
+    display: flex;
+    margin-bottom: 0;
+    color: red;
+}
+
+.your-character-container {
+    margin-top: 8em;
+}
+
+.your-character-unordered-list {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.your-character-title {
+    text-align: center;
+    background: darkgreen;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+}
+
+.li-user-selected-char {
+    display: inline-block;
+    text-decoration: none;
+    background: darkred;
+    padding: 0.3em 1em;
+    border-radius: 0.5em;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.opponent-character-container {
+    margin-top: 2em;
+}
+
+.opponent-character-title {
+    text-align: center;
+    background: rgb(100, 0, 77);
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+}

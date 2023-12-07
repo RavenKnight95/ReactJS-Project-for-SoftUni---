@@ -1,5 +1,5 @@
 .character-create-container {
-    margin-top: 5em;
+    margin-top: 3em;
     display: flex;
     justify-content: center;
 }
@@ -7,12 +7,11 @@
 .character-create {
     width: 20em;
     height: 25em;
-    padding-top: 0.5em;
     background: url("https://media.istockphoto.com/id/182149686/photo/an-abstract-of-a-vintage-piece-of-paper.jpg?s=612x612&w=0&k=20&c=933BHVxfamtJvs_HR05HRKuxUqVE8q4nvAs1TVPdd_w=");
     border-radius: 1em;
     text-align: center;
     box-shadow:
-    
+
         0 0 5px 5px rgb(20, 14, 1);
     /* outer cyan */
 }
@@ -38,5 +37,5 @@
 }
 
 .finalize-button {
-    margin-top: 2em;
+    margin-top: 0.4em;
 }

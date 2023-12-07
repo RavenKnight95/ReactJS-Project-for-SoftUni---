@@ -1,51 +1,73 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router';
+import AuthContext from '../../contexts/authContext';
+import * as characterService from '../../services/characterService';
 
-const Arena = () => {
-  // Assume you have a list of user-created characters and opponent characters
-  const userCharacters = [
-    { name: 'UserCharacter1', attackPower: 5, defensePower: 3, dexterity: 7 },
-    // Add more user-created characters as needed
-  ];
+import './Arena.css'
 
+export default function Arena({
+  _id,
+  name,
+  attackPower,
+  defensePower,
+  dexterity,
+}) {
   useEffect(() => { document.body.style.backgroundImage = `url(${'https://i.pinimg.com/originals/5e/44/81/5e44819d85fc181389136371684f02d3.jpg'})` })
 
-  const opponentCharacters = [
-    { name: 'OpponentCharacter1', attackPower: 4, defensePower: 2, dexterity: 6 },
-    // Add more opponent characters as needed
-  ];
-
+  const navigate = useNavigate();
+  const [characters, setCharacters] = useState([]);
+  const { email, userId } = useContext(AuthContext);
   const [selectedUserCharacter, setSelectedUserCharacter] = useState(null);
   const [selectedOpponentCharacter, setSelectedOpponentCharacter] = useState(null);
 
+  useEffect(() => {
+    characterService.getAll()
+      .then(result => setCharacters(result))
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+
+  const filtered = characters.filter((char) => char._ownerId === userId)
+  const filtered2 = characters.filter((char) => char._ownerId !== userId)
+  console.log(filtered);
+  console.log(filtered2);
+
   const handleUserCharacterSelect = (character) => {
     setSelectedUserCharacter(character);
+    useEffect
   };
-
   const handleOpponentCharacterSelect = (character) => {
     setSelectedOpponentCharacter(character);
   };
 
   const handleBattle = () => {
+
     if (selectedUserCharacter && selectedOpponentCharacter) {
-      // Compare attributes and decide the winner
+
       const userTotalAttributes =
-        selectedUserCharacter.attackPower +
-        selectedUserCharacter.defensePower +
+        (selectedUserCharacter.attackPower +
+          selectedUserCharacter.defensePower) *
         selectedUserCharacter.dexterity;
 
       const opponentTotalAttributes =
-        selectedOpponentCharacter.attackPower +
-        selectedOpponentCharacter.defensePower +
+        (selectedOpponentCharacter.attackPower +
+          selectedOpponentCharacter.defensePower) *
         selectedOpponentCharacter.dexterity;
 
       if (userTotalAttributes > opponentTotalAttributes) {
         // User character wins
         alert(`${selectedUserCharacter.name} is victorious!`);
+        // characterService.remove(selectedOpponentCharacter._id);
+
         // TODO: Allow the user to allocate one attribute point to the winning character
+
       } else if (userTotalAttributes < opponentTotalAttributes) {
-        // Opponent character wins
         alert(`${selectedOpponentCharacter.name} is victorious!`);
-        // TODO: Remove the defeated character (delete or mark as defeated)
+        characterService.remove(selectedUserCharacter._id);
+        alert(`Sadly, ${selectedUserCharacter.name} has passed away...`)
+        navigate('/character-roster');
+
       } else {
         alert('It\'s a draw!');
       }
@@ -55,31 +77,30 @@ const Arena = () => {
   };
 
   return (
-    <div>
-      <h2>Arena</h2>
-      <div>
-        <h3>Your Character</h3>
-        <ul>
-          {userCharacters.map((character) => (
-            <li key={character.name} onClick={() => handleUserCharacterSelect(character)}>
-              {character.name}
-            </li>
-          ))}
-        </ul>
+    <div className="background-arena-container">
+      <div className="arena-container">
+        <div className='your-character-container'>
+          <h3 className='your-character-title'>Your Characters</h3>
+          <ul className='your-character-unordered-list'>
+            {filtered.map((character) => (
+              <li key={character.name} className="li-user-selected-char" onClick={() => handleUserCharacterSelect(character)}>
+                {character.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='opponent-character-container'>
+          <h3 className='opponent-character-title'>Opponent Characters</h3>
+          <ul className='your-character-unordered-list'>
+            {filtered2.map((character) => (
+              <li key={character.name} className="li-user-selected-char" onClick={() => handleOpponentCharacterSelect(character)}>
+                {character.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <button onClick={handleBattle}>Battle</button>
       </div>
-      <div>
-        <h3>Opponent Character</h3>
-        <ul>
-          {opponentCharacters.map((character) => (
-            <li key={character.name} onClick={() => handleOpponentCharacterSelect(character)}>
-              {character.name}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <button onClick={handleBattle}>Battle</button>
-    </div>
+    </div >
   );
 };
-
-export default Arena;

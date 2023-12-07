@@ -71,8 +71,6 @@ const CharacterCreate = ({ onSubmit }) => {
         dexterity,
       };
 
-      // const characterData = Object.fromEntries(new FormData(this.character));
-      console.log(character);
       try {
         await characterService.create(character);
         navigate('/tavern');

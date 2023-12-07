@@ -24,7 +24,6 @@ export default function CharacterRoster() {
     }, []);
 
     const filtered = characters.filter((char) => char._ownerId === userId)
-
     return (
         <div className="character-roster">
             <h1 className="character-roster-h1">Character Roster</h1>
@@ -32,7 +31,7 @@ export default function CharacterRoster() {
                 {filtered.map(f => (
                     <CharacterRosterFiltered key={f._id} {...f} />
                 ))}
-                {characters.length === 0 && (
+                {filtered.length === 0 && (
                     <div className="no-characters-section">
                         <div className="no-characters">
                             <p className="no-characters">You still need to create your own Character</p>
