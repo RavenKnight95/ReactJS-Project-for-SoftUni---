@@ -139,7 +139,9 @@ describe('Authentication plugin', () => {
                     decorator(context, request);
 
                     expect(() => context.auth.register({ email: 'a@a.a', password: '123456' })).to.throw('A user with the same email already exists');
+
                     expect(context.protectedStorage.query.called).to.be.true;
+                    alert('A user with the same email already exists!')
                 });
             });
 

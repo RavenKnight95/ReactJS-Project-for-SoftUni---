@@ -8,7 +8,7 @@ import './Register.css'
 const RegisterFormKeys = {
     Email: 'email',
     Password: 'password',
-    ConfirmPassword: 'confirm-password'
+    ConfirmPassword: 'confirmPassword'
 }
 
 export default function Register() {
@@ -53,8 +53,8 @@ export default function Register() {
                         <label className='register-label'>Repeat Password:</label>
                         <input
                             type="password"
-                            name="confirm-password"
-                            id="confirm-password"
+                            name="confirmPassword"
+                            id="confirmPassword"
                             onChange={onChange}
                             values={values[RegisterFormKeys.ConfirmPassword]}
                         />

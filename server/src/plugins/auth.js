@@ -34,6 +34,7 @@ function initPlugin(settings) {
                 body.hasOwnProperty('password') === false ||
                 body[identity].length == 0 ||
                 body.password.length == 0) {
+                alert('Missing fields!')
                 throw new RequestError('Missing fields');
             } else if (context.protectedStorage.query('users', { [identity]: body[identity] }).length !== 0) {
                 throw new ConflictError(`A user with the same ${identity} already exists`);

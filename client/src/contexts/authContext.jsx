@@ -22,9 +22,19 @@ export const AuthProvider = ({
     };
 
     const registerSubmitHandler = async (values) => {
-        const result = await authService.register(values.email, values.password);
 
-        setAuth(result);
+
+        if (values.password !== values.confirmPassword) {
+            return window.alert("Passwords don't match!")
+        }
+
+        const result = await authService.register(values.email, values.password);
+        try {
+            setAuth(result);
+        } catch (error) {
+            console.log(error)
+        }
+
 
         localStorage.setItem('accessToken', result.accessToken);
 
