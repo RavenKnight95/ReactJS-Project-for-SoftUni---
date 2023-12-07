@@ -11,9 +11,25 @@ body {
     flex-direction: column;
     text-align: center;
     color: #000;
+    justify-content: center;
+    align-items: center;
 }
 
 .tavern-message-h1 {
+    display: flex;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background: url('pngeggtavern.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 370px;
+    height: 150px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     color: #fff;
 }
 

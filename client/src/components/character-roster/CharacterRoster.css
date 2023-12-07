@@ -5,13 +5,20 @@
 }
 
 .character-roster-h1 {
-    display: inline-block;
-    justify-content: center;
+    display: flex;
     font-weight: 500;
-    font-family: inherit;
+    font-family: 'Times New Roman', Times, serif;
     padding: 0.5em;
     border-radius: 0.5em;
-    background: url('https://t3.ftcdn.net/jpg/04/90/52/56/360_F_490525617_QKrYK6KNjDLZin65pWT1BaBGD2jkMkAc.jpg')
+    background: url('pngegg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 370px;
+    height: 150px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .create-button {
