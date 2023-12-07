@@ -1,13 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import * as characterService from '../../services/characterService';
-import { useNavigate, useParams } from "react-router";
+import { useNavigate } from "react-router";
 import AuthContext from "../../contexts/authContext";
-import TavernCharacter from "../tavern/tavern-character/TavernCharacter";
 import CharacterRosterFiltered from "./character-roster-filtered/CharacterRosterFiltered";
 
 import './CharacterRoster.css'
+import { Link } from "react-router-dom";
 
 export default function CharacterRoster() {
+
+    useEffect(() => { document.body.style.backgroundImage = `url(${'https://i.etsystatic.com/45437265/r/il/71de21/5160683751/il_fullxfull.5160683751_eumm.jpg'})` })
 
     const navigate = useNavigate();
     const [characters, setCharacters] = useState([]);
@@ -30,6 +32,16 @@ export default function CharacterRoster() {
                 {filtered.map(f => (
                     <CharacterRosterFiltered key={f._id} {...f} />
                 ))}
+                {characters.length === 0 && (
+                    <div className="no-characters-section">
+                        <div className="no-characters">
+                            <p className="no-characters">You still need to create your own Character</p>
+                        </div>
+                        <div className="create-button-container">
+                            <Link to={`/character-create`} className="create-button">Create one now</Link>
+                        </div>
+                    </div>
+                )}
             </section>
         </div>
     );

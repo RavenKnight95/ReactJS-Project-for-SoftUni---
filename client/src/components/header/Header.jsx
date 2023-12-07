@@ -10,13 +10,13 @@ export default function Header() {
     } = useContext(AuthContext);
 
     return (
-        <header>
+        <header className="header-container">
             <Link className="home" to="/"><h1>Arena Battles</h1></Link>
-            <nav>
+            <nav className="nav-container">
                 {isAuthenticated && (
                     <div id="user">
-                        <Link to="/arena"><button>Arena</button></Link>
-                        <Link to="/tavern"><button>Tavern</button></Link>
+                        <Link to="/arena"><button className="arena-button">Arena</button></Link>
+                        <Link to="/tavern"><button className="tavern-button">Tavern</button></Link>
                         <Link to="/character-create"><button>Create Character</button></Link>
                         <Link to="/character-roster"><button>Character Roster</button></Link>
                         <Link to="/logout"><button>Logout</button></Link>

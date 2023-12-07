@@ -26,7 +26,7 @@ footer {
 
 header {
     position: relative;
-    padding: 10px;
+    padding: 1em;
 }
 
 
@@ -36,13 +36,16 @@ header nav {
     font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute;
     right: 0;
-    bottom: 8px;
+    bottom: 1em;
 }
 
 header nav>* {
     float: left;
 }
 
+.header-container {
+    padding-bottom: 3em;
+}
 
 nav a {
     margin: 0 0.5em;
@@ -62,6 +65,7 @@ nav a:hover {
     margin: 0;
     padding: 0;
 }
+
 .home {
     display: flex;
     justify-content: center;
@@ -69,4 +73,39 @@ nav a:hover {
     text-decoration: none;
     color: #fff;
     margin-bottom: 2em;
+}
+
+.tavern-button {
+    background: url('https://cdna.artstation.com/p/assets/images/images/031/499/056/large/matt-therrien-m-woodfloor.jpg?1603805857');
+    background-image: contain;
+}
+
+.tavern-button:hover {
+    border-color: #ffa564;
+}
+
+@keyframes flaming {
+    0% {
+        box-shadow: 0 0 3px 1px #ff5733, 0 0 5px 3px #ff5733, 0 0 10px 5px #ff5733;
+    }
+
+    50% {
+        box-shadow: 0 0 3px 1px #ff5733, 0 0 7px 3px #ff5733, 0 0 15px 8px #ff5733;
+    }
+
+    100% {
+        box-shadow: 0 0 3px 1px #ff5733, 0 0 5px 3px #ff5733, 0 0 10px 5px #ff5733;
+    }
+}
+
+.arena-button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.4em 1.2em;
+    font-size: 1.3em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    animation: flaming 3s infinite;
 }

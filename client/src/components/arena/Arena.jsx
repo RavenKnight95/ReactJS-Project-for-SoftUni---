@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Arena = () => {
   // Assume you have a list of user-created characters and opponent characters
@@ -6,6 +6,8 @@ const Arena = () => {
     { name: 'UserCharacter1', attackPower: 5, defensePower: 3, dexterity: 7 },
     // Add more user-created characters as needed
   ];
+
+  useEffect(() => { document.body.style.backgroundImage = `url(${'https://i.pinimg.com/originals/5e/44/81/5e44819d85fc181389136371684f02d3.jpg'})` })
 
   const opponentCharacters = [
     { name: 'OpponentCharacter1', attackPower: 4, defensePower: 2, dexterity: 6 },
