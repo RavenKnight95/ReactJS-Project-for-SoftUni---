@@ -5,14 +5,13 @@ import AuthContext from "../../contexts/authContext";
 import TavernCharacter from "../tavern/tavern-character/TavernCharacter";
 import CharacterRosterFiltered from "./character-roster-filtered/CharacterRosterFiltered";
 
+import './CharacterRoster.css'
+
 export default function CharacterRoster() {
 
     const navigate = useNavigate();
     const [characters, setCharacters] = useState([]);
-    const [character, setCharacter] = useState({});
     const { email, userId } = useContext(AuthContext);
-    const { characterId } = useParams();
-    const [filteredCharacters, setFilteredCharacters] = useState('');
 
     useEffect(() => {
         characterService.getAll()
@@ -26,7 +25,7 @@ export default function CharacterRoster() {
 
     return (
         <div className="character-roster">
-            <h1>Character Roster</h1>
+            <h1 className="character-roster-h1">Character Roster</h1>
             <section id="tavern-page">
                 {filtered.map(f => (
                     <CharacterRosterFiltered key={f._id} {...f} />
