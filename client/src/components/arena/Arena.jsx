@@ -35,7 +35,8 @@ export default function Arena({
 
   const handleUserCharacterSelect = (character) => {
     setSelectedUserCharacter(character);
-    useEffect
+   
+
   };
   const handleOpponentCharacterSelect = (character) => {
     setSelectedOpponentCharacter(character);
