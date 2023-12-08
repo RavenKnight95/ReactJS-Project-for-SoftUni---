@@ -48,6 +48,37 @@
     cursor: pointer;
 }
 
+.li-user-selected-char-is-selected {
+    display: inline-block;
+    text-decoration: none;
+    background: darkred;
+    padding: 0.3em 1em;
+    border-radius: 0.5em;
+    font-size: 20px;
+    cursor: pointer;
+    border: 3px solid #fff;
+}
+.li-opponent-selected-char {
+    display: inline-block;
+    text-decoration: none;
+    background: darkred;
+    padding: 0.3em 1em;
+    border-radius: 0.5em;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.li-opponent-selected-char-is-selected {
+    display: inline-block;
+    text-decoration: none;
+    background: darkred;
+    padding: 0.3em 1em;
+    border-radius: 0.5em;
+    font-size: 20px;
+    cursor: pointer;
+    border: 3px solid #fff;
+}
+
 .opponent-character-container {
     margin-top: 2em;
 }

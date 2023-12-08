@@ -19,6 +19,7 @@ export default function Arena({
   const { email, userId } = useContext(AuthContext);
   const [selectedUserCharacter, setSelectedUserCharacter] = useState(null);
   const [selectedOpponentCharacter, setSelectedOpponentCharacter] = useState(null);
+  const [style, setStyle] = useState('li-user-selected-char');
 
   useEffect(() => {
     characterService.getAll()
@@ -34,9 +35,16 @@ export default function Arena({
   const handleUserCharacterSelect = (character) => {
     setSelectedUserCharacter(character);
 
+    if (style !== 'li-user-selected-char') setStyle('li-user-selected-char');
+    else setStyle('li-user-selected-char-is-selected');
+    console.log(`clicked on your character with id ${character._id}`);
   };
   const handleOpponentCharacterSelect = (character) => {
     setSelectedOpponentCharacter(character);
+
+    if (style !== 'li-oponent-selected-char') setStyle('li-opponent-selected-char');
+    else setStyle('li-oponent-selected-char-is-selected');
+    console.log('clicked on opponent');
   };
 
   const handleBattle = () => {
@@ -81,7 +89,7 @@ export default function Arena({
           <h3 className='your-character-title'>Your Characters</h3>
           <ul className='your-character-unordered-list'>
             {filtered.map((character) => (
-              <li key={character.name} className="li-user-selected-char" onClick={() => handleUserCharacterSelect(character)}>
+              <li key={character.name} className={style} onClick={() => handleUserCharacterSelect(character)}>
                 {character.name}
               </li>
             ))}
@@ -91,7 +99,7 @@ export default function Arena({
           <h3 className='opponent-character-title'>Opponent Characters</h3>
           <ul className='your-character-unordered-list'>
             {filtered2.map((character) => (
-              <li key={character.name} className="li-user-selected-char" onClick={() => handleOpponentCharacterSelect(character)}>
+              <li key={character.name} className={style} onClick={() => handleOpponentCharacterSelect(character)}>
                 {character.name}
               </li>
             ))}
