@@ -20,6 +20,7 @@ export default function Arena({
   const [selectedUserCharacter, setSelectedUserCharacter] = useState(null);
   const [selectedOpponentCharacter, setSelectedOpponentCharacter] = useState(null);
   const [style, setStyle] = useState('li-user-selected-char');
+  const [opponentStyle, setOpponentStyle] = useState('li-opponent-selected-char')
 
   useEffect(() => {
     characterService.getAll()
@@ -37,14 +38,14 @@ export default function Arena({
 
     if (style !== 'li-user-selected-char') setStyle('li-user-selected-char');
     else setStyle('li-user-selected-char-is-selected');
-    console.log(`clicked on your character with id ${character._id}`);
+    alert(`You have chosen to fight with ${character.name}`)
   };
   const handleOpponentCharacterSelect = (character) => {
     setSelectedOpponentCharacter(character);
 
-    if (style !== 'li-oponent-selected-char') setStyle('li-opponent-selected-char');
-    else setStyle('li-oponent-selected-char-is-selected');
-    console.log('clicked on opponent');
+    if (opponentStyle !== 'li-oponent-selected-char') setOpponentStyle('li-opponent-selected-char');
+    else setOpponentStyle('li-oponent-selected-char-is-selected');
+    alert(`Your opponent ${character.name} is ready to fight!`)
   };
 
   const handleBattle = () => {
