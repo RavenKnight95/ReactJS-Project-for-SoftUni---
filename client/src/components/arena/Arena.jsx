@@ -24,18 +24,15 @@ export default function Arena({
     characterService.getAll()
       .then(result => setCharacters(result))
       .catch(err => {
-        console.log(err);
+
       });
   }, []);
 
   const filtered = characters.filter((char) => char._ownerId === userId)
   const filtered2 = characters.filter((char) => char._ownerId !== userId)
-  console.log(filtered);
-  console.log(filtered2);
 
   const handleUserCharacterSelect = (character) => {
     setSelectedUserCharacter(character);
-   
 
   };
   const handleOpponentCharacterSelect = (character) => {
