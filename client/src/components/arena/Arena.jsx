@@ -17,11 +17,20 @@ export default function Arena({
 
   const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
+  const { characterId } = useParams('');
   const { email, userId } = useContext(AuthContext);
   const [selectedUserCharacter, setSelectedUserCharacter] = useState(null);
   const [selectedOpponentCharacter, setSelectedOpponentCharacter] = useState(null);
   const [style, setStyle] = useState('li-user-selected-char');
   const [opponentStyle, setOpponentStyle] = useState('')
+  const [character, setCharacter] = useState({
+    name: '',
+    Level: 1,
+    HealthPoints: 100,
+    attackPower: '',
+    defensePower: '',
+    dexterity: '',
+  });
 
   useEffect(() => {
     characterService.getAll()
@@ -50,7 +59,7 @@ export default function Arena({
     alert(`Your opponent ${character.name} is ready to fight!`)
   };
 
-  const handleBattle = () => {
+  const handleBattle = async (e) => {
 
     if (selectedUserCharacter && selectedOpponentCharacter) {
 
@@ -68,6 +77,19 @@ export default function Arena({
         // User character wins
         alert(`${selectedUserCharacter.name} is victorious!`);
 
+        const values = {
+          ...selectedUserCharacter,
+          remainingPoints: selectedUserCharacter.remainingPoints + 1,
+        };
+      
+        try {
+          await characterService.edit(selectedUserCharacter._id, values);
+          alert(`Congratulations! ${selectedUserCharacter.name} has earned one point to distribute!`)
+          navigate('/character-roster');
+
+        } catch (err) {
+          console.log(err);
+        }
         // characterService.remove(selectedOpponentCharacter._id);
         // TODO: Allow the user to allocate one attribute point to the winning character
 
@@ -95,7 +117,7 @@ export default function Arena({
             {filtered.map((character) => (
               <li key={character.name} className={style} onClick={() => handleUserCharacterSelect(character)}>
                 {character.name}
-                
+
               </li>
             ))}
           </ul>

@@ -7,7 +7,7 @@ export default function CharacterPointsAllocator({
 }) {
     const navigate = useNavigate();
     const { characterId } = useParams();
-    const [remainingPoints, setRemainingPoints] = useState(1);
+    const [remainingPoints, setRemainingPoints] = useState(0);
     const [attackPower, setAttackPower] = useState(0);
     const [defensePower, setDefensePower] = useState(0);
     const [dexterity, setDexterity] = useState(0);
@@ -18,6 +18,7 @@ export default function CharacterPointsAllocator({
         attackPower: '',
         defensePower: '',
         dexterity: '',
+        remainingPoints: '',
     });
 
     useEffect(() => {
@@ -31,7 +32,7 @@ export default function CharacterPointsAllocator({
     }, [characterId]);
 
     const handleIncrement = (attribute) => {
-        if (remainingPoints > 0) {
+        if (character.remainingPoints > 0) {
             switch (attribute) {
                 case 'attackPower':
                     setAttackPower(character.attackPower++);
@@ -45,7 +46,7 @@ export default function CharacterPointsAllocator({
                 default:
                     break;
             }
-            setRemainingPoints(remainingPoints - 1);
+            setRemainingPoints(character.remainingPoints--);
         }
 
     };
@@ -55,19 +56,19 @@ export default function CharacterPointsAllocator({
             case 'attackPower':
                 if (character.attackPower > 0) {
                     setAttackPower(character.attackPower--);
-                    setRemainingPoints(remainingPoints + 1);
+                    setRemainingPoints(character.remainingPoints++);
                 }
                 break;
             case 'defensePower':
                 if (character.defensePower > 0) {
                     setDefensePower(character.defensePower--);
-                    setRemainingPoints(remainingPoints + 1);
+                    setRemainingPoints(character.remainingPoints++);
                 }
                 break;
             case 'dexterity':
                 if (character.dexterity > 0) {
                     setDexterity(character.dexterity--);
-                    setRemainingPoints(remainingPoints + 1);
+                    setRemainingPoints(character.remainingPoints++);
                 }
                 break;
             default:
@@ -85,6 +86,7 @@ export default function CharacterPointsAllocator({
             attackPower: character.attackPower,
             defensePower: character.defensePower,
             dexterity: character.dexterity,
+            remainingPoints: character.remainingPoints,
         };
 
         try {
@@ -105,8 +107,8 @@ export default function CharacterPointsAllocator({
                 <div>
                     <h2>{character.name}</h2>
                 </div>
-                {remainingPoints === 0 ? <p className='remaining-points-red'>Remaining Points: {remainingPoints}</p> :
-                    <p className='remaining-points-green'>Remaining Points: {remainingPoints}</p>}
+                {character.remainingPoints === 0 ? <p className='remaining-points-red'>Remaining Points: {character.remainingPoints}</p> :
+                    <p className='remaining-points-green'>Remaining Points: {character.remainingPoints}</p>}
 
                 <div>
                     <label className='attribute-name'>Attack Power: {character.attackPower} </label>

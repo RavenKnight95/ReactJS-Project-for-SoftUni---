@@ -71,6 +71,7 @@ const CharacterCreate = ({ onSubmit }) => {
         attackPower,
         defensePower,
         dexterity,
+        remainingPoints,
       };
 
       try {

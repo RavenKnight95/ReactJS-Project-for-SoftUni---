@@ -20,7 +20,7 @@ export default function CharacterDetails() {
             .then(setCharacter);
 
     }, [characterId]);
-
+    console.log(character);
     const totalPower = (character.attackPower + character.defensePower) * character.dexterity
 
     const deleteButtonClickHandler = async () => {
@@ -41,6 +41,7 @@ export default function CharacterDetails() {
                     {userId === character._ownerId && (
                         <div className="character-header">
                             <h1 className="char-name">{character.name} greets you with a smile</h1>
+                            <h1 className="char-attribute-attack">RemainingPoints: {character.remainingPoints}</h1>
                             <h1 className="char-attribute-attack">Level: {character.Level}</h1>
                             <h1 className="char-attribute-attack">Health: {character.HealthPoints}</h1>
                             <h1 className="char-attribute-attack">Attack Power: {character.attackPower}</h1>
