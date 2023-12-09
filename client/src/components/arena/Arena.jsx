@@ -8,6 +8,7 @@ import './Arena.css'
 export default function Arena({
   _id,
   name,
+  Level,
   attackPower,
   defensePower,
   dexterity,
@@ -20,7 +21,7 @@ export default function Arena({
   const [selectedUserCharacter, setSelectedUserCharacter] = useState(null);
   const [selectedOpponentCharacter, setSelectedOpponentCharacter] = useState(null);
   const [style, setStyle] = useState('li-user-selected-char');
-  const [opponentStyle, setOpponentStyle] = useState('li-opponent-selected-char')
+  const [opponentStyle, setOpponentStyle] = useState('')
 
   useEffect(() => {
     characterService.getAll()
@@ -35,6 +36,7 @@ export default function Arena({
 
   const handleUserCharacterSelect = (character) => {
     setSelectedUserCharacter(character);
+    
 
     if (style !== 'li-user-selected-char') setStyle('li-user-selected-char');
     else setStyle('li-user-selected-char-is-selected');
@@ -43,8 +45,8 @@ export default function Arena({
   const handleOpponentCharacterSelect = (character) => {
     setSelectedOpponentCharacter(character);
 
-    if (opponentStyle !== 'li-oponent-selected-char') setOpponentStyle('li-opponent-selected-char');
-    else setOpponentStyle('li-oponent-selected-char-is-selected');
+    // if (opponentStyle !== 'li-opponent-selected-char') setOpponentStyle('li-opponent-selected-char');
+    // else setOpponentStyle('li-opponent-selected-char-is-selected');
     alert(`Your opponent ${character.name} is ready to fight!`)
   };
 
@@ -65,14 +67,15 @@ export default function Arena({
       if (userTotalAttributes > opponentTotalAttributes) {
         // User character wins
         alert(`${selectedUserCharacter.name} is victorious!`);
-        // characterService.remove(selectedOpponentCharacter._id);
 
+        // characterService.remove(selectedOpponentCharacter._id);
         // TODO: Allow the user to allocate one attribute point to the winning character
 
       } else if (userTotalAttributes < opponentTotalAttributes) {
         alert(`${selectedOpponentCharacter.name} is victorious!`);
         characterService.remove(selectedUserCharacter._id);
         alert(`Sadly, ${selectedUserCharacter.name} has passed away...`)
+
         navigate('/character-roster');
 
       } else {
@@ -100,7 +103,7 @@ export default function Arena({
           <h3 className='opponent-character-title'>Opponent Characters</h3>
           <ul className='your-character-unordered-list'>
             {filtered2.map((character) => (
-              <li key={character.name} className={style} onClick={() => handleOpponentCharacterSelect(character)}>
+              <li key={character.name} className='li-opponent-selected-char' onClick={() => handleOpponentCharacterSelect(character)}>
                 {character.name}
               </li>
             ))}

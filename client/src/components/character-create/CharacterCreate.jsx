@@ -66,6 +66,8 @@ const CharacterCreate = ({ onSubmit }) => {
     if (remainingPoints === 0 && characterName.trim() !== '') {
       const character = {
         name: characterName,
+        Level: 1,
+        HealthPoints: 100,
         attackPower,
         defensePower,
         dexterity,
