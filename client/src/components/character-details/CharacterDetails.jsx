@@ -5,6 +5,7 @@ import './CharacterDetails.css'
 
 import * as characterService from '../../services/characterService';
 import AuthContext from "../../contexts/authContext";
+import { pathToUrl } from "../../utils/pathUtils";
 
 export default function CharacterDetails() {
     const navigate = useNavigate();
@@ -47,7 +48,7 @@ export default function CharacterDetails() {
                             <h1 className="char-attribute-dexterity">Dexterity: {character.dexterity}</h1>
                             <h1 className="char-attribute-total-power">Total Power: {totalPower}</h1>
                             <div className="buttons">
-                                {/* <Link to={pathToUrl('/characters/:characterId/edit', { characterId })} className="button">Edit</Link> */}
+                                <Link to={pathToUrl('/characters/:characterId/edit', { characterId })} className="button">Allocate Points</Link>
                                 <button className="button" onClick={deleteButtonClickHandler}>Dismiss</button>
                             </div>
                         </div>

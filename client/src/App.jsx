@@ -14,6 +14,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Tavern from './components/tavern/Tavern';
 import CharacterDetails from './components/character-details/CharacterDetails';
 import CharacterRoster from './components/character-roster/CharacterRoster';
+import CharacterPointsAllocator from './components/character-points-allocator/CharacterPointsAllocator';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path="/character-create" element={<CharacterCreate />} />
             <Route path="/character-roster" element={<CharacterRoster />} />
             <Route path="/characters/:characterId" element={<CharacterDetails />} />
+            <Route path="/characters/:characterId/edit" element={<CharacterPointsAllocator />} />
             <Route path="/tavern" element={<Tavern />} />
             <Route path="/arena" element={<Arena />} />
 

@@ -95,7 +95,7 @@ export default function Arena({
             {filtered.map((character) => (
               <li key={character.name} className={style} onClick={() => handleUserCharacterSelect(character)}>
                 {character.name}
-
+                
               </li>
             ))}
           </ul>
@@ -106,7 +106,6 @@ export default function Arena({
             {filtered2.map((character) => (
               <li key={character.name} className='li-opponent-selected-char' onClick={() => handleOpponentCharacterSelect(character)}>
                 {character.name}
-
               </li>
             ))}
           </ul>
