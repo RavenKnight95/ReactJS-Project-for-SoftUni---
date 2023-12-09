@@ -41,8 +41,9 @@
 .li-user-selected-char {
     display: inline-block;
     text-decoration: none;
+    text-align: center;
     background: darkred;
-    padding: 0.3em 1em;
+    padding: 0.2em 0.5em;
     border-radius: 0.5em;
     font-size: 20px;
     cursor: pointer;
@@ -51,8 +52,9 @@
 .li-user-selected-char-is-selected {
     display: inline-block;
     text-decoration: none;
+    text-align: center;
     background: darkred;
-    padding: 0.3em 1em;
+    padding: 0.2em 0.5em;
     border-radius: 0.5em;
     font-size: 20px;
     cursor: pointer;
@@ -62,8 +64,9 @@
 .li-opponent-selected-char {
     display: inline-block;
     text-decoration: none;
+    text-align: center;
     background: rgb(37, 0, 139);
-    padding: 0.3em 1em;
+    padding: 0.2em 0.5em;
     border-radius: 0.5em;
     font-size: 20px;
     cursor: pointer;
@@ -72,8 +75,9 @@
 .li-opponent-selected-char-is-selected {
     display: inline-block;
     text-decoration: none;
+    text-align: center;
     background: rgb(37, 0, 139);
-    padding: 0.3em 1em;
+    padding: 0.2em 0.5em;
     border-radius: 0.5em;
     font-size: 20px;
     cursor: pointer;
