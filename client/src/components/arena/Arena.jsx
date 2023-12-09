@@ -36,7 +36,7 @@ export default function Arena({
 
   const handleUserCharacterSelect = (character) => {
     setSelectedUserCharacter(character);
-    
+
 
     if (style !== 'li-user-selected-char') setStyle('li-user-selected-char');
     else setStyle('li-user-selected-char-is-selected');
@@ -95,6 +95,7 @@ export default function Arena({
             {filtered.map((character) => (
               <li key={character.name} className={style} onClick={() => handleUserCharacterSelect(character)}>
                 {character.name}
+
               </li>
             ))}
           </ul>
@@ -105,6 +106,7 @@ export default function Arena({
             {filtered2.map((character) => (
               <li key={character.name} className='li-opponent-selected-char' onClick={() => handleOpponentCharacterSelect(character)}>
                 {character.name}
+
               </li>
             ))}
           </ul>
