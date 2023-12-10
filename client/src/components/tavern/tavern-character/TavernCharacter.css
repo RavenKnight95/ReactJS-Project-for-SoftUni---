@@ -12,7 +12,7 @@
     color: #fff;
     background: linear-gradient(90deg, rgba(2, 3, 4, 5) 0%, rgb(131, 127, 127) 80%, rgba(0, 0, 0, 0.346) 100%);
     border: 0;
-    padding: var(--size-1) var(--size-2);
+    padding: 0.5em, 1em;
     transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
     transition: transform 0.1s;
     position: relative;

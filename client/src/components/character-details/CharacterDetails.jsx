@@ -20,7 +20,7 @@ export default function CharacterDetails() {
             .then(setCharacter);
 
     }, [characterId]);
-    console.log(character);
+    
     const totalPower = (character.attackPower + character.defensePower) * character.dexterity
 
     const deleteButtonClickHandler = async () => {
@@ -48,9 +48,9 @@ export default function CharacterDetails() {
                             <h1 className="char-attribute-defense">Defense Power: {character.defensePower}</h1>
                             <h1 className="char-attribute-dexterity">Dexterity: {character.dexterity}</h1>
                             <h1 className="char-attribute-total-power">Total Power: {totalPower}</h1>
-                            <div className="buttons">
-                                <Link to={pathToUrl('/characters/:characterId/edit', { characterId })} className="button">Allocate Points</Link>
-                                <button className="button" onClick={deleteButtonClickHandler}>Dismiss</button>
+                            <div className="details-buttons">
+                                <button className="dismiss-button" onClick={deleteButtonClickHandler}>Dismiss</button>
+                                <Link to={pathToUrl('/characters/:characterId/edit', { characterId })} className="allocate-points-button">Allocate Points</Link>
                             </div>
                         </div>
                     )}
@@ -58,7 +58,7 @@ export default function CharacterDetails() {
                         <div className="character-header">
                             <p className="char-not-owned">
 
-                                {character.name} politely asks you to walk away...
+                                {character.name} doesn't show any interest in you...
                             </p>
                             <Link to={('/tavern')} className="go-back-button">Go back to Tavern</Link>
                         </div>

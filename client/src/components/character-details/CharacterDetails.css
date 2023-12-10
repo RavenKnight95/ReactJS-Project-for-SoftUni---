@@ -85,7 +85,41 @@
     text-decoration: none;
     font-size: 1.2em;
     color: #fff;
-    background:rgb(116, 2, 2);
+    background: rgb(116, 2, 2);
     border-radius: 1em;
     padding: 1em;
+}
+
+.go-back-button:hover {
+    background: rgb(114, 48, 48);
+}
+
+.allocate-points-button {
+    display: inline-block;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #fff;
+    background: rgb(25, 1, 1);
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.dismiss-button {
+    display: inline-block;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #fff;
+    background: rgb(25, 1, 1);
+    border-radius: 1em;
+    
+}
+
+.details-buttons {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    width: 14em;
+    height: 5em;
 }
