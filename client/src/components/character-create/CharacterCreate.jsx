@@ -87,7 +87,7 @@ const CharacterCreate = ({ onSubmit }) => {
       alert('Please provide a character name and allocate all 10 points before finalizing.');
     }
   };
-
+  
   return (
     <div className="character-create-container">
       <div className='character-create'>
