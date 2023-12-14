@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { pathToUrl } from "../../../utils/pathUtils";
 import AuthContext from "../../../contexts/authContext";
 
+import './CharacterRosterFiltered.css'
 
 export default function CharacterRosterFiltered({
     _id,
@@ -29,14 +30,17 @@ export default function CharacterRosterFiltered({
     return (
         <div className="allCharacters">
             <div className="allCharacters-info">
-                <h1>{name}</h1>
+                <h1 className="roster-character">{name}</h1>
+                {remainingPoints == 0 && (
+                    <h1>You have {remainingPoints} points to allocate</h1>
+                )}
                 {remainingPoints == 1 && (
                     <h1>You have {remainingPoints} point to allocate</h1>
                 )}
                 {remainingPoints > 1 && (
                     <h1>You have {remainingPoints} points to allocate</h1>
                 )}
-                <div className="buttons-container">
+                <div className="details-buttons-container">
                     <Link to={`/characters/${_id}`} className="details-button">Check Stats</Link>
                 </div>
             </div>

@@ -20,6 +20,7 @@ export default function WelcomePage() {
                 {isAuthenticated && (
                     <div className="welcome-container">
                         <h1 className="welcome-message">Welcome</h1>
+                        <img className="welcome-img-right-logged" src="faraam.png" alt="" />
                     </div>
                 )}
 

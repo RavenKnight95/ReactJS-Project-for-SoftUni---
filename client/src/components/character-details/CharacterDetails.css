@@ -41,6 +41,7 @@
     border-radius: 0.3em;
     padding: 0.5em;
     color: #fff;
+    text-shadow: 2px 2px #000;
 }
 
 .char-attribute-attack {
@@ -48,6 +49,7 @@
     justify-content: center;
     background: rgb(116, 2, 2);
     border-radius: 0.3em;
+    text-shadow: 2px 2px #000;
 }
 
 .char-attribute-defense {
@@ -55,6 +57,7 @@
     justify-content: center;
     background: rgb(8, 8, 152);
     border-radius: 0.3em;
+    text-shadow: 2px 2px #000;
 }
 
 .char-attribute-dexterity {
@@ -62,6 +65,7 @@
     justify-content: center;
     background: rgb(14, 66, 14);
     border-radius: 0.3em;
+    text-shadow: 2px 2px #000;
 }
 
 .char-attribute-total-power {
@@ -69,6 +73,7 @@
     justify-content: center;
     background: rgb(125, 87, 11);
     border-radius: 0.3em;
+    text-shadow: 2px 2px #000;
 }
 
 .char-not-owned {
@@ -113,7 +118,7 @@
     color: #fff;
     background: rgb(25, 1, 1);
     border-radius: 1em;
-    
+
 }
 
 .details-buttons {
@@ -122,4 +127,10 @@
     align-items: center;
     width: 14em;
     height: 5em;
+}
+
+.character-header {
+    position: relative;
+    bottom: 4em;
+
 }

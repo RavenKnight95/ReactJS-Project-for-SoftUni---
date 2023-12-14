@@ -13,6 +13,7 @@ body {
     color: #000;
     justify-content: center;
     align-items: center;
+    text-shadow: 3px 3px #000;
 }
 
 .tavern-message-h1 {
@@ -32,6 +33,7 @@ body {
     justify-content: center;
     color: #fff;
     padding-top: 1.2em;
+    
 }
 
 .tavern-message-h2 {

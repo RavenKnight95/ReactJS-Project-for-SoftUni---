@@ -59,6 +59,12 @@
 
 .welcome-img-right {
     position: absolute;
-    top: 0.1em;
-    right: 21em;
+    top: 1em;
+    right: 22em;
+    width: 25em;
+}
+.welcome-img-right-logged {
+    position: absolute;
+    top: 25em;
+    width: 20em;
 }

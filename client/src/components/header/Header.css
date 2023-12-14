@@ -108,14 +108,14 @@ nav a:hover {
 .main-title {
     display: flex;
     font-weight: 600;
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: 'Times New Roman', Times, serif;
-    background: url('pngwing.com.png');
+    background: url('silver sword and shield.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 450px;
-    height: 180px;
+    width: 6em;
+    height: 6em;
     text-align: center;
     align-items: center;
     justify-content: center;
