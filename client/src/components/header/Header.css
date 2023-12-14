@@ -6,10 +6,7 @@ body {
     background-size: cover;
 }
 
-.auth {
-    width: 100px;
-    margin: 8em auto;
-}
+
 
 header,
 footer {
@@ -43,9 +40,7 @@ header nav>* {
     float: left;
 }
 
-.header-container {
-    padding-bottom: 3em;
-}
+
 
 nav a {
     margin: 0 0.5em;
@@ -108,4 +103,27 @@ nav a:hover {
     background-color: #1a1a1a;
     cursor: pointer;
     animation: flaming 3s infinite;
+}
+
+.main-title {
+    display: flex;
+    font-weight: 600;
+    font-size: 3em;
+    font-family: 'Times New Roman', Times, serif;
+    background: url('pngwing.com.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 180px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: goldenrod;
+    text-shadow: 2px 2px #000;
+
+}
+.main-title:hover {
+    transition: ease-in-out 0.5s;
+    color: rgb(185, 183, 183);
 }

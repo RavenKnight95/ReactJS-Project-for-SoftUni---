@@ -6,12 +6,12 @@ import AuthContext from "../../contexts/authContext";
 export default function Header() {
     const {
         isAuthenticated,
-        
+
     } = useContext(AuthContext);
 
     return (
         <header className="header-container">
-            <Link className="home" to="/"><h1>Arena Battles</h1></Link>
+            <Link className="home" to="/"><h1 className="main-title">Arena Battles</h1></Link>
             <nav className="nav-container">
                 {isAuthenticated && (
                     <div id="user">
@@ -22,11 +22,6 @@ export default function Header() {
                         <Link to="/logout"><button>Logout</button></Link>
 
                     </div>)}
-
-                {!isAuthenticated && (<div id="guest">
-                    <Link to="/login"><button>Login</button></Link>
-                    <Link to="/register"><button>Register</button></Link>
-                </div>)}
 
             </nav>
         </header>
