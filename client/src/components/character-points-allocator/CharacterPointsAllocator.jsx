@@ -127,6 +127,7 @@ export default function CharacterPointsAllocator({
                 </div>
                 <button className='finalize-button' onClick={finalizeCharacter}>Allocate Points</button>
             </div>
+
         </div>
     )
 }
