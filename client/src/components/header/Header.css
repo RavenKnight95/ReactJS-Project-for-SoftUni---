@@ -127,3 +127,12 @@ nav a:hover {
     transition: ease-in-out 0.5s;
     color: rgb(185, 183, 183);
 }
+.header-container {
+    display: flex;
+}
+.nav-container {
+    position: inherit;
+    align-self: center;
+    left: 20em;
+    
+}
