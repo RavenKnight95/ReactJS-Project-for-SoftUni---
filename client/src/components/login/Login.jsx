@@ -12,12 +12,15 @@ const LoginFormKeys = {
 export default function Login() {
 
     useEffect(() => { document.body.style.backgroundImage = `url(${'https://i.imgur.com/ktqRaJo.jpg'})` });
-    
+
     const { loginSubmitHandler } = useContext(AuthContext);
     const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
     });
+
+
+
     return (
         <div className="login-container">
             <div className='login-form'>

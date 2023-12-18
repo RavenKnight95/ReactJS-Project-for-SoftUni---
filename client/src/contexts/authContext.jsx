@@ -15,12 +15,13 @@ export const AuthProvider = ({
 
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password);
 
+        const result = await authService.login(values.email, values.password);
         setAuth(result);
         localStorage.setItem('accessToken', result.accessToken);
 
         navigate('/');
+
     };
 
     const registerSubmitHandler = async (values) => {

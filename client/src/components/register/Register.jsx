@@ -35,6 +35,7 @@ export default function Register() {
                             id="email"
                             name="email"
                             placeholder="raven@mail.com"
+                            required="Email is required"
                             onChange={onChange}
                             value={values[RegisterFormKeys.Email]}
                         />

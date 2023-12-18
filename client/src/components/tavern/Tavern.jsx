@@ -41,7 +41,6 @@ export default function Tavern() {
 
                     <button className="bartender-search-button" onClick={handleSearch}>Search</button>
                     <ul>
-                        {searchResults.length === 0 && (<h1 className="character-not-present">I haven't heard of this character...sorry.</h1>)}
 
                         {searchResults.map((character) => (
                             <li className="found-characters" key={character.name}>
@@ -49,7 +48,9 @@ export default function Tavern() {
                                     <p>Be careful, {character.name} is very strong</p>
                                 )}
                             </li>
+
                         ))}
+                        {searchResults.length === 0 && (<h1 className="character-not-present">I haven't heard of this character...sorry.</h1>)}
                     </ul>
                 </div>
                 <h2 className="tavern-message-h2">Below are the characters having a drink </h2>
