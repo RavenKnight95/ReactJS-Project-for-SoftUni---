@@ -63,9 +63,32 @@
     right: 22em;
     width: 25em;
 }
+
 .welcome-img-right-logged {
     position: absolute;
     top: 20em;
     width: 20em;
     right: 30em;
+}
+
+.welcome-message-p {
+    margin-top: 1.2em;
+    font-size: 1.4em;
+    color: #000;
+
+}
+
+.p-message-container {
+
+    background: url('scroll-message.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20em;
+    height: 27em;
+    text-align: center;
+    padding: 3em 1.2em;
+
+
+
 }

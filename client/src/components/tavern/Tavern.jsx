@@ -22,9 +22,9 @@ export default function Tavern() {
 
         const filteredCharacters = characters.filter((character) =>
 
-            character.name.toLowerCase().includes(searchTerm.toLowerCase())
+            character.name.toLowerCase() === searchTerm.toLowerCase()
         );
-        console.log(filteredCharacters);
+
         setSearchResults(filteredCharacters);
     };
     return (
@@ -41,9 +41,8 @@ export default function Tavern() {
 
                     <button className="bartender-search-button" onClick={handleSearch}>Search</button>
                     <ul>
-                        {searchResults.length === 0 && (
-                            <h1 className="character-not-present">Haven't heard of this character...sorry.</h1>
-                        )}
+                        {searchResults.length === 0 && (<h1 className="character-not-present">I haven't heard of this character...sorry.</h1>)}
+
                         {searchResults.map((character) => (
                             <li className="found-characters" key={character.name}>
                                 Yep, {character.name} is here {character.attackPower >= 4 && (

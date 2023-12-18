@@ -20,6 +20,12 @@ export default function WelcomePage() {
                 {isAuthenticated && (
                     <div className="welcome-container">
                         <h1 className="welcome-message">Welcome</h1>
+                        <div className="p-message-container">
+                            <p className="welcome-message-p">In order to begin, you must first create a character.</p>
+                            <p className="welcome-message-p">Then find another character to fight with in the Arena, win to gain points and make your character stronger!</p>
+                            <p className="welcome-message-p">Easy!</p>
+                        </div>
+
                         <img className="welcome-img-right-logged" src="faraam.png" alt="" />
                     </div>
                 )}
