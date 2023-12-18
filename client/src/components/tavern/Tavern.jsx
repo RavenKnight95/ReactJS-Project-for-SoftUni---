@@ -25,7 +25,10 @@ export default function Tavern() {
             character.name.toLowerCase() === searchTerm.toLowerCase()
         );
 
+
         setSearchResults(filteredCharacters);
+
+
     };
     return (
         <div className="tavern-welcome">
@@ -47,10 +50,12 @@ export default function Tavern() {
                                 Yep, {character.name} is here {character.attackPower >= 4 && (
                                     <p>Be careful, {character.name} is very strong</p>
                                 )}
+                                {character.Level >= 3 && (<p>I heard {character.name} has reached level {character.Level} already</p>)}
                             </li>
 
                         ))}
-                        {searchResults.length === 0 && (<h1 className="character-not-present">I haven't heard of this character...sorry.</h1>)}
+                        {searchResults.length === 0 && (<h1 className="character-not-present">Hello my friend! What can I get ya?</h1>)}
+
                     </ul>
                 </div>
                 <h2 className="tavern-message-h2">Below are the characters having a drink </h2>

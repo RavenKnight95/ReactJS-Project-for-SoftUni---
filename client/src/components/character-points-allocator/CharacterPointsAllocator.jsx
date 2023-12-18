@@ -81,7 +81,7 @@ export default function CharacterPointsAllocator({
         // Check if all points are allocated and a name is provided before finalizing
         const values = {
             name: character.name,
-            Level: 1,
+            Level: character.Level,
             HealthPoints: 100,
             attackPower: character.attackPower,
             defensePower: character.defensePower,

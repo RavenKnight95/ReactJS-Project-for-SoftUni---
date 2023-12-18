@@ -25,7 +25,7 @@ export default function Arena({
   const [opponentStyle, setOpponentStyle] = useState('')
   const [character, setCharacter] = useState({
     name: '',
-    Level: 1,
+    Level: '',
     HealthPoints: 100,
     attackPower: '',
     defensePower: '',
@@ -80,18 +80,19 @@ export default function Arena({
         const values = {
           ...selectedUserCharacter,
           remainingPoints: selectedUserCharacter.remainingPoints + 1,
+          Level: selectedUserCharacter.Level + 1,
         };
-      
+
         try {
           await characterService.edit(selectedUserCharacter._id, values);
           alert(`Congratulations! ${selectedUserCharacter.name} has earned one point to distribute!`)
+          alert(`${selectedUserCharacter.name} has levelled up!`)
           navigate('/character-roster');
 
         } catch (err) {
           console.log(err);
         }
-        // characterService.remove(selectedOpponentCharacter._id);
-        // TODO: Allow the user to allocate one attribute point to the winning character
+        // characterService.remove(selectedOpponentCharacter._id)
 
       } else if (userTotalAttributes < opponentTotalAttributes) {
         alert(`${selectedOpponentCharacter.name} is victorious!`);
