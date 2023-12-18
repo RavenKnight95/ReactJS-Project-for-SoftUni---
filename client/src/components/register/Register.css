@@ -74,6 +74,7 @@
     margin: 2.5em;
     width: 20em;
     height: 10em;
+
 }
 .register-span {
     font-size: 1.4em;
@@ -81,4 +82,18 @@
 }
 .register-a {
     color: #fff; 
+}
+
+#confirmPassword,
+#register-password,
+#email {
+    
+    height: 2em;
+    
+}
+.register-label {
+    padding: 0.5em;
+}
+.register-container-form {
+    padding: 0.5em;
 }

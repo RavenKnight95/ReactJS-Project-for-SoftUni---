@@ -23,7 +23,7 @@ export default function Login() {
             <div className='login-form'>
                 <h2 className='login-title'>Login</h2>
                 <form onSubmit={onSubmit}>
-                    <div>
+                    <div className='login-container-form'>
                         <label className='login-label'>Email:</label>
                         <input
                             type="email"
@@ -34,7 +34,7 @@ export default function Login() {
                             value={values[LoginFormKeys.Email]}
                         />
                     </div>
-                    <div>
+                    <div className='login-container-form'>
                         <label className='login-label'>Password:</label>
                         <input
                             type="password"

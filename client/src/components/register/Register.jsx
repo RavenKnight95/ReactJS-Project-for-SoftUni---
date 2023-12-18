@@ -28,7 +28,7 @@ export default function Register() {
             <div className='register-form'>
                 <h2 className='register-title'>Register</h2>
                 <form onSubmit={onSubmit}>
-                    <div>
+                    <div className="register-container-form">
                         <label className='register-label'>Email:</label>
                         <input
                             type="email"
@@ -39,7 +39,7 @@ export default function Register() {
                             value={values[RegisterFormKeys.Email]}
                         />
                     </div>
-                    <div>
+                    <div className="register-container-form">
                         <label className='register-label'>Password:</label>
                         <input
                             type="password"
@@ -49,7 +49,7 @@ export default function Register() {
                             values={values[RegisterFormKeys.Password]}
                         />
                     </div>
-                    <div>
+                    <div className="register-container-form">
                         <label className='register-label'>Repeat Password:</label>
                         <input
                             type="password"

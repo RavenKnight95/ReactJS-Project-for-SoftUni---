@@ -65,6 +65,7 @@
 }
 .welcome-img-right-logged {
     position: absolute;
-    top: 25em;
+    top: 20em;
     width: 20em;
+    right: 30em;
 }

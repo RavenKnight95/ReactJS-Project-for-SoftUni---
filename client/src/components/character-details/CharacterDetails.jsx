@@ -41,9 +41,9 @@ export default function CharacterDetails() {
                     {userId === character._ownerId && (
                         <div className="character-header">
                             <h1 className="char-name">{character.name} greets you with a smile</h1>
-                            <h1 className="char-attribute-attack">RemainingPoints: {character.remainingPoints}</h1>
-                            <h1 className="char-attribute-attack">Level: {character.Level}</h1>
-                            <h1 className="char-attribute-attack">Health: {character.HealthPoints}</h1>
+                            <h1 className="char-attribute-remaining-points">RemainingPoints: {character.remainingPoints}</h1>
+                            <h1 className="char-attribute-level">Level: {character.Level}</h1>
+                            <h1 className="char-attribute-health">Health: {character.HealthPoints}</h1>
                             <h1 className="char-attribute-attack">Attack Power: {character.attackPower}</h1>
                             <h1 className="char-attribute-defense">Defense Power: {character.defensePower}</h1>
                             <h1 className="char-attribute-dexterity">Dexterity: {character.dexterity}</h1>

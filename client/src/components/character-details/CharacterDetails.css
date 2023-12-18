@@ -76,6 +76,29 @@
     text-shadow: 2px 2px #000;
 }
 
+.char-attribute-remaining-points {
+    display: flex;
+    justify-content: center;
+    background: rgb(133, 1, 128);
+    border-radius: 0.3em;
+    text-shadow: 2px 2px #000;
+}
+
+.char-attribute-level {
+    display: flex;
+    justify-content: center;
+    background: rgb(190, 74, 1);
+    border-radius: 0.3em;
+    text-shadow: 2px 2px #000;
+}
+.char-attribute-health {
+    display: flex;
+    justify-content: center;
+    background: rgb(200, 2, 2);
+    border-radius: 0.3em;
+    text-shadow: 2px 2px #000;
+}
+
 .char-not-owned {
     background: #fff;
     color: #000;

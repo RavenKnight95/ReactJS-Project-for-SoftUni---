@@ -84,3 +84,10 @@
 .login-a {
     color: #fff;
 }
+.login-container-form {
+    padding: 0.5em;
+}
+#email,
+#login-password {
+    height: 2em;
+}
