@@ -19,33 +19,35 @@ export default function Tavern() {
     }, []);
 
     const handleSearch = () => {
-        
+
         const filteredCharacters = characters.filter((character) =>
-        
+
             character.name.toLowerCase().includes(searchTerm.toLowerCase())
-            
         );
-        
+        console.log(filteredCharacters);
         setSearchResults(filteredCharacters);
     };
     return (
         <div className="tavern-welcome">
             <div className="tavern-message">
                 <h1 className="tavern-message-h1">Welcome to the Tavern! </h1>
-                <div>
-                    <h2>Ask the bartender</h2>
+                <div className="bartender-container">
+                    <h2 className="bartender-h2">Ask the bartender</h2>
                     <input
                         type="text"
                         placeholder="Search for a character"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)} />
 
-                    <button onClick={handleSearch}>Submit</button>
+                    <button className="bartender-search-button" onClick={handleSearch}>Search</button>
                     <ul>
+                        {searchResults.length === 0 && (
+                            <h1 className="character-not-present">Haven't heard of this character...sorry.</h1>
+                        )}
                         {searchResults.map((character) => (
-                            <li key={character.name}>
-                                {character.name} - {character.totalPower >=25 && (
-                                    <p>Careful, {character.name} is very strong</p>
+                            <li className="found-characters" key={character.name}>
+                                Yep, {character.name} is here {character.attackPower >= 4 && (
+                                    <p>Be careful, {character.name} is very strong</p>
                                 )}
                             </li>
                         ))}
