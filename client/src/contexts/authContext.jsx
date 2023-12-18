@@ -12,10 +12,8 @@ export const AuthProvider = ({
 }) => {
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {});
-    const [error, setError] = useState(null);
 
     const loginSubmitHandler = async (values) => {
-
 
         try {
             const result = await authService.login(values.email, values.password);
@@ -26,9 +24,6 @@ export const AuthProvider = ({
         } catch (error) {
             window.alert("Email or password don't match!")
         }
-
-
-
     };
 
     const registerSubmitHandler = async (values) => {
