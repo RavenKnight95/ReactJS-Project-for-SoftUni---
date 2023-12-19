@@ -9,6 +9,7 @@ export default function Tavern() {
     const [characters, setCharacters] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState(characters);
+    const [showDiv, setShowDiv] = useState(true);
 
     useEffect(() => { document.body.style.backgroundImage = `url(${'https://i.etsystatic.com/45437265/r/il/71de21/5160683751/il_fullxfull.5160683751_eumm.jpg'})` })
     useEffect(() => {
@@ -27,6 +28,11 @@ export default function Tavern() {
 
 
         setSearchResults(filteredCharacters);
+        if (filteredCharacters.length >= 1) {
+            setShowDiv(true);
+        } else {
+            setShowDiv(false);
+        }
 
 
     };
@@ -54,7 +60,7 @@ export default function Tavern() {
                             </li>
 
                         ))}
-                        {searchResults.length === 0 && (<h1 className="character-not-present">Hello my friend! What can I get ya?</h1>)}
+                        {!showDiv && (<h1 className="character-not-present">Sorry, haven't heard of this character</h1>)}
 
                     </ul>
                 </div>

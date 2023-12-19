@@ -22,6 +22,7 @@ export default function Arena({
   const [selectedUserCharacter, setSelectedUserCharacter] = useState(null);
   const [selectedOpponentCharacter, setSelectedOpponentCharacter] = useState(null);
   const [style, setStyle] = useState('li-user-selected-char');
+  const [showDiv, setShowDiv] = useState(false);
   const [opponentStyle, setOpponentStyle] = useState('')
   const [character, setCharacter] = useState({
     name: '',
@@ -74,8 +75,9 @@ export default function Arena({
         selectedOpponentCharacter.dexterity;
 
       if (userTotalAttributes > opponentTotalAttributes) {
+        setShowDiv(!showDiv);
         // User character wins
-        alert(`${selectedUserCharacter.name} is victorious!`);
+        // alert(`${selectedUserCharacter.name} is victorious!`);
 
         const values = {
           ...selectedUserCharacter,
@@ -85,16 +87,17 @@ export default function Arena({
 
         try {
           await characterService.edit(selectedUserCharacter._id, values);
-          alert(`Congratulations! ${selectedUserCharacter.name} has earned one point to distribute!`)
-          alert(`${selectedUserCharacter.name} has levelled up!`)
-          navigate('/character-roster');
+          // alert(`Congratulations! ${selectedUserCharacter.name} has earned one point to distribute!`)
+          // alert(`${selectedUserCharacter.name} has levelled up!`)
+          // navigate('/character-roster');
 
         } catch (err) {
           console.log(err);
         }
-        // characterService.remove(selectedOpponentCharacter._id)
+
 
       } else if (userTotalAttributes < opponentTotalAttributes) {
+        
         alert(`${selectedOpponentCharacter.name} is victorious!`);
         characterService.remove(selectedUserCharacter._id);
         alert(`Sadly, ${selectedUserCharacter.name} has passed away...`)
@@ -108,6 +111,9 @@ export default function Arena({
       alert('Please select both user and opponent characters before battling.');
     }
   };
+  const handleBattleOver = async (e) => {
+    setShowDiv(!showDiv);
+  }
 
   return (
     <div className="background-arena-container">
@@ -118,7 +124,6 @@ export default function Arena({
             {filtered.map((character) => (
               <li key={character.name} className={style} onClick={() => handleUserCharacterSelect(character)}>
                 {character.name}
-
               </li>
             ))}
           </ul>
@@ -134,6 +139,17 @@ export default function Arena({
           </ul>
         </div>
         <button onClick={handleBattle}>Battle</button>
+        {showDiv && (
+          <div className="container-battle-over">
+            <div className='battle-over'>
+              <h1 className='battle-over-h1'>Battle's Over!</h1>
+              <p>{selectedUserCharacter.name}'s total power was higher than {selectedOpponentCharacter.name}'s</p>
+              <p>{selectedUserCharacter.name} is victorious!</p>
+              <p>Congratulations! {selectedUserCharacter.name} has earned one point to distribute!</p>
+              <p>{selectedUserCharacter.name} has levelled up!</p>
+              <button onClick={handleBattleOver}>OK</button>
+            </div>
+          </div>)}
       </div>
     </div >
   );

@@ -94,3 +94,13 @@
     border-radius: 0.5em;
     padding: 0.5em 1em;
 }
+
+.container-battle-over {
+    position: absolute;
+    background: brown;
+    width: 25em;
+    height: 30em;
+    text-align: center;
+    top: 26em;
+    border-radius: 0.5em;
+}
