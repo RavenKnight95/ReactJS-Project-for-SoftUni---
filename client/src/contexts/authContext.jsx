@@ -22,7 +22,7 @@ export const AuthProvider = ({
             navigate('/');
 
         } catch (error) {
-            window.alert("Email or password don't match!")
+            window.alert(error.message)
         }
     };
 
@@ -33,17 +33,14 @@ export const AuthProvider = ({
             return window.alert("Passwords don't match!")
         }
 
-        const result = await authService.register(values.email, values.password);
         try {
+            const result = await authService.register(values.email, values.password);
             setAuth(result);
+            localStorage.setItem('accessToken', result.accessToken);
+            navigate('/');
         } catch (error) {
-            console.log(error)
+            window.alert(error.message)
         }
-
-
-        localStorage.setItem('accessToken', result.accessToken);
-
-        navigate('/');
     };
 
     const logoutHandler = () => {

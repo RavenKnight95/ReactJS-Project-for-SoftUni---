@@ -9,7 +9,7 @@ const LoginFormKeys = {
     Email: 'email',
     Password: 'password',
 }
-export default function Login() {
+export default function Login(error) {
 
     useEffect(() => { document.body.style.backgroundImage = `url(${'https://i.imgur.com/ktqRaJo.jpg'})` });
 
@@ -18,6 +18,7 @@ export default function Login() {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
     });
+
 
 
 
