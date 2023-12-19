@@ -3,7 +3,6 @@ import * as characterService from '../../services/characterService';
 import { useNavigate } from "react-router";
 import AuthContext from "../../contexts/authContext";
 import CharacterRosterFiltered from "./character-roster-filtered/CharacterRosterFiltered";
-
 import './CharacterRoster.css'
 import { Link } from "react-router-dom";
 
